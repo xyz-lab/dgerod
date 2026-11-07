@@ -39,6 +39,7 @@ defaults:
       tags: other
 
 exclude:
+  - docs
   - vendor
   - .bundle
   - README.md
