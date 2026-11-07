@@ -168,6 +168,10 @@ footer {
 .blog-grid .box { margin-bottom: 0; }
 .tags-box { padding: 20px; }
 .tags-box h2 { font-size: 18px; }
+.tag-cloud { display: flex; flex-wrap: wrap; gap: 2px; margin-bottom: 8px; }
+.tag-cloud .tag { cursor: pointer; }
+.tag-cloud .tag:hover { text-decoration: none; border-color: var(--accent); color: var(--accent); }
+.tag-cloud .tag.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 .tags-box .tag-heading { font-size: 14px; margin-top: 12px; }
 .tags-box .tag-list { font-size: 13px; padding-left: 16px; }
 @media (max-width: 640px) {

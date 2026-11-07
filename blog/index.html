@@ -29,15 +29,43 @@ redirect_from:
 <aside class="box tags-box">
   <h2>By tags</h2>
   {%- assign tags = site.tags | sort %}
-  {%- for tag in tags %}
-  {%- if tag[0] != 'other' %}
-  <h3 class="tag-heading" id="tag-{{ tag[0] | slugify }}">{{ tag[0] }}</h3>
-  <ul class="tag-list">
-    {%- for post in tag[1] %}
-    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="muted">{{ post.date | date: "%b %Y" }}</span></li>
-    {%- endfor %}
-  </ul>
-  {%- endif %}
-  {%- endfor %}
+  <div class="tag-cloud">
+    {%- for tag in tags %}{% if tag[0] != 'other' %}
+    <a class="tag" href="#tag-{{ tag[0] | slugify }}" data-tag="tag-{{ tag[0] | slugify }}">{{ tag[0] }}</a>
+    {%- endif %}{% endfor %}
+  </div>
+
+  {%- for tag in tags %}{% if tag[0] != 'other' %}
+  <div class="tag-posts" id="tag-{{ tag[0] | slugify }}">
+    <h3 class="tag-heading">{{ tag[0] }}</h3>
+    <ul class="tag-list">
+      {%- for post in tag[1] %}
+      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="muted">{{ post.date | date: "%b %Y" }}</span></li>
+      {%- endfor %}
+    </ul>
+  </div>
+  {%- endif %}{% endfor %}
 </aside>
 </div>
+
+<script>
+  // Tag cloud: show only the posts of the selected tag (also from #tag-... links in posts).
+  (function () {
+    var groups = document.querySelectorAll(".tag-posts");
+    var links = document.querySelectorAll(".tag-cloud .tag");
+    function select(id) {
+      groups.forEach(function (g) { g.hidden = g.id !== id; });
+      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("data-tag") === id); });
+    }
+    links.forEach(function (a) {
+      a.addEventListener("click", function (e) {
+        e.preventDefault();
+        var id = a.getAttribute("data-tag");
+        var open = a.classList.contains("active");
+        select(open ? "" : id);
+        history.replaceState(null, "", open ? location.pathname : "#" + id);
+      });
+    });
+    select(location.hash.slice(1));
+  })();
+</script>

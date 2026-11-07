@@ -8,8 +8,6 @@ lang: en
 twitter:
   username: dgerod
 
-# Keep the same post URLs as the old blog: /YYYY/MM/DD/slug.html
-# (explicit, so the blog/ folder is not added to the URL)
 permalink: /:year/:month/:day/:title:output_ext
 
 markdown: kramdown
@@ -22,7 +20,6 @@ plugins:
   - jekyll-titles-from-headings
   - jekyll-redirect-from
 
-# Posts take their title from their first "# Heading" (as in the old blog)
 titles_from_headings:
   strip_title: true
   collections: true
