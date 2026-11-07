@@ -161,7 +161,7 @@ footer {
 /* Blog page: posts (left) + tags (right) */
 .blog-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 260px;
+  grid-template-columns: minmax(0, 1fr) 240px;
   gap: 24px;
   align-items: start;
 }
@@ -170,7 +170,7 @@ footer {
 .tags-box h2 { font-size: 18px; }
 .tags-box .tag-heading { font-size: 14px; margin-top: 12px; }
 .tags-box .tag-list { font-size: 13px; padding-left: 16px; }
-@media (max-width: 860px) {
+@media (max-width: 640px) {
   .blog-grid { grid-template-columns: 1fr; }
 }
 
