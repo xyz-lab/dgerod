@@ -97,7 +97,9 @@ and open http://localhost:4000. The site rebuilds when a file changes; just relo
 
 ## Publishing
 
-The contents of this folder go at the root of the `dgerod/dgerod.github.io` repo. After a push to the main branch, GitHub Pages builds and publishes the site within a few minutes.
+The site lives in the `xyz-lab/dgerod` repo and is published with GitHub Pages at https://dgerod.xyz-lab.org.es/ (the `CNAME` file sets the custom domain; in IONOS, `dgerod.xyz-lab.org.es` is a CNAME to `xyz-lab.github.io`). After a push to the main branch, GitHub Pages builds and publishes the site within a few minutes.
+
+The old address https://dgerod.github.io/ (repo `dgerod/dgerod.github.io`) only redirects to the new domain, keeping the path.
 
 URLs from the old blog are preserved:
 
