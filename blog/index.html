@@ -1,0 +1,41 @@
+---
+layout: default
+title: Blog
+permalink: /blog/
+redirect_from:
+  - /blog.html
+  - /archive.html
+  - /by_tags.html
+---
+<section class="box">
+  <h2>Blog</h2>
+  <p>Quick notes about things I see in my daily work, and brief explanations of some projects I worked on.</p>
+
+  {%- assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  {%- for year in years %}
+  <h3 class="year">{{ year.name }}</h3>
+  <ul class="posts">
+    {%- for post in year.items %}
+    <li>
+      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+    </li>
+    {%- endfor %}
+  </ul>
+  {%- endfor %}
+</section>
+
+<section class="box">
+  <h2>By tags</h2>
+  {%- assign tags = site.tags | sort %}
+  {%- for tag in tags %}
+  {%- if tag[0] != 'other' %}
+  <h3 class="tag-heading" id="tag-{{ tag[0] | slugify }}">{{ tag[0] }}</h3>
+  <ul class="tag-list">
+    {%- for post in tag[1] %}
+    <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="muted">{{ post.date | date: "%b %Y" }}</span></li>
+    {%- endfor %}
+  </ul>
+  {%- endif %}
+  {%- endfor %}
+</section>

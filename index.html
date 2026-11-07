@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diego Escudero - Home</title>
+  <meta name="description" content="Diego Escudero, computer engineer specialized in robotics.">
+  <link rel="alternate" type="application/atom+xml" title="Diego Escudero" href="feed.xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html"><img src="images/logo.png" alt="Diego Escudero"></a>
+      <ul class="nav">
+        <li><a class="active" href="index.html">Home</a></li>
+        <li><a href="blog/">Blog</a></li>
+        <li><a href="https://x.com/dgerod">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/dgerod">LinkedIn</a></li>
+        <li><a href="https://github.com/dgerod">GitHub</a></li>
+        <li><a href="about-me.html">About me</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <p class="tagline">I am interested in <a href="https://en.wikipedia.org/wiki/Robotics">#Robotics</a> but I am able to speak about other things... sometimes.</p>
+
+    <div class="home-grid">
+    <section class="box">
+      <h2>Portfolio</h2>
+      <div class="slideshow" data-base="portfolio/" aria-label="Portfolio images">
+        <div class="slides"></div>
+        <div class="slide-nav"></div>
+      </div>
+      <div class="portfolio" id="projects"></div>
+      <p class="fallback" id="projects-fallback">If the projects do not load, see my repositories at <a href="https://github.com/dgerod?tab=repositories">github.com/dgerod</a>.</p>
+      <p class="more"><a href="https://github.com/dgerod?tab=repositories">All repositories on GitHub →</a></p>
+    </section>
+
+    <section class="box">
+      <h2>Lifestream</h2>
+      <div class="lifestream">
+        <a class="twitter-timeline" data-height="900" data-dnt="true" href="https://twitter.com/dgerod">Tweets by @dgerod</a>
+        <p class="fallback">If the timeline does not load, see my posts at <a href="https://x.com/dgerod">x.com/dgerod</a>.</p>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <footer>
+    Unless otherwise noted, content is licensed under
+    <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+    · <a href="feed.xml">RSS</a>
+  </footer>
+  <script>    
+    (function () {
+      var FILES = ["01.jpg","02.png","03.jpg","04.jpg","05.jpg","06.jpg","07.png","08.jpg","09.jpg","10.jpg",
+                   "11.jpg","12.jpg","13.png","14.jpg","15.jpg","16.png","17.png","18.png","19.jpg","20.jpg",
+                   "21.jpg","22.jpg","23.jpg","24.png","25.png","26.jpg","27.png","28.png","29.jpg","30.jpg"];
+
+      document.querySelectorAll(".slideshow").forEach(function (root) {
+        var base = root.getAttribute("data-base") || "";
+        var slides = root.querySelector(".slides");
+        var nav = root.querySelector(".slide-nav");
+        var current = 0, timer;
+
+        FILES.forEach(function (f, i) {
+          var img = document.createElement("img");
+          img.src = base + f;
+          img.alt = "Portfolio image " + (i + 1);
+          img.loading = i === 0 ? "eager" : "lazy";
+          if (i === 0) img.className = "active";
+          slides.appendChild(img);
+
+          var b = document.createElement("button");
+          b.type = "button";
+          b.textContent = i + 1;
+          if (i === 0) b.className = "active";
+          b.addEventListener("click", function () { show(i); restart(); });
+          nav.appendChild(b);
+        });
+
+        var imgs = slides.children, btns = nav.children;
+        function show(i) {
+          imgs[current].classList.remove("active"); btns[current].classList.remove("active");
+          current = i;
+          imgs[current].classList.add("active"); btns[current].classList.add("active");
+        }
+        function restart() {
+          clearInterval(timer);
+          timer = setInterval(function () { show((current + 1) % FILES.length); }, 3000);
+        }
+        root.addEventListener("mouseenter", function () { clearInterval(timer); });
+        root.addEventListener("mouseleave", restart);
+        restart();
+      });
+    })();
+  </script>
+  <script>
+    // Portfolio projects: GitHub repos of dgerod with the topic "portfolio", most starred first.
+    // If they load, the fallback message is hidden; otherwise it stays visible.
+    (function () {
+      var USER = "dgerod", TOPIC = "portfolio";
+      var box = document.getElementById("projects");
+      if (!box || !window.fetch) return;
+
+      function el(tag, cls, text) {
+        var e = document.createElement(tag);
+        if (cls) e.className = cls;
+        if (text) e.textContent = text;
+        return e;
+      }
+
+      fetch("https://api.github.com/users/" + USER + "/repos?per_page=100&type=owner", {
+        headers: { "Accept": "application/vnd.github+json" }
+      })
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
+        .then(function (repos) {
+          var picked = repos
+            .filter(function (r) { return (r.topics || []).indexOf(TOPIC) !== -1; })
+            .sort(function (a, b) { return b.stargazers_count - a.stargazers_count || a.name.localeCompare(b.name); });
+          if (!picked.length) return;
+
+          picked.forEach(function (r) {
+            var card = el("article", "project");
+            var h3 = el("h3");
+            var link = el("a", "", r.name);
+            link.href = r.html_url;
+            h3.appendChild(link);
+            card.appendChild(h3);
+            card.appendChild(el("p", "", r.description || ""));
+            var meta = [r.language, r.stargazers_count ? "★ " + r.stargazers_count : ""]
+              .filter(Boolean).join(" · ");
+            card.appendChild(el("span", "meta", meta));
+            box.appendChild(card);
+          });
+          var fb = document.getElementById("projects-fallback");
+          if (fb) fb.hidden = true;
+        })
+        .catch(function () { /* leave the fallback message visible */ });
+    })();
+  </script>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="{{ site.lang | default: 'en' }}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {%- seo -%}
+  {%- feed_meta -%}
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="{{ '/' | relative_url }}"><img src="{{ '/images/logo.png' | relative_url }}" alt="Diego Escudero"></a>
+      <ul class="nav">
+        <li><a {% if page.url == '/' %}class="active" {% endif %}href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a {% if page.url == '/blog/' or page.layout == 'post' %}class="active" {% endif %}href="{{ '/blog/' | relative_url }}">Blog</a></li>
+        <li><a href="https://x.com/dgerod">Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/dgerod">LinkedIn</a></li>
+        <li><a href="https://github.com/dgerod">GitHub</a></li>
+        <li><a {% if page.url == '/about-me.html' %}class="active" {% endif %}href="{{ '/about-me.html' | relative_url }}">About me</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    {{ content }}
+  </main>
+
+  <footer>
+    Unless otherwise noted, content is licensed under
+    <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+    · <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+  </footer>
+</body>
+</html>

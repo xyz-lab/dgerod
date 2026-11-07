@@ -1,42 +1,46 @@
-title: "dgerod's scratchpad"
+title: "Diego Escudero"
 author: "dgerod"
-description: "My scratchpad about Robotics, AI and software. Except where otherwise noted, content on this blog is licensed under CC BY 3.0"
-# Email / Social media user names used by the minima theme:
-# All of these are optional and can be removed or commented out
-github_username: "dgerod"
-twitter_username: "dgerod"
-linkedin_username: "dgerod"
-#facebook_username: username
-#flickr_username: username
-#instagram_username: username
-#pinterest_username: username
-#youtube_username: username
-#googleplus_username: +username
+description: "Diego Escudero, computer engineer specialized in Robotics. Except where otherwise noted, content is licensed under CC BY 3.0."
+url: "https://dgerod.github.io"
+baseurl: ""
+lang: en
 
-#########################################################################################
-######### Nothing below needs to be changed (unless you know what you're doing) #########
-#########################################################################################
-theme: "minima"
+twitter:
+  username: dgerod
 
-rss: rss
+# Keep the same post URLs as the old blog: /YYYY/MM/DD/slug.html
+# (explicit, so the blog/ folder is not added to the URL)
+permalink: /:year/:month/:day/:title:output_ext
 
-kramdown:
-  syntax_highlighter_opts:
-    disable: true
-    
+markdown: kramdown
+highlighter: rouge
+
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-seo-tag
+  - jekyll-titles-from-headings
+  - jekyll-redirect-from
 
+# Posts take their title from their first "# Heading" (as in the old blog)
 titles_from_headings:
   strip_title: true
   collections: true
 
+feed:
+  posts_limit: 20
+
 defaults:
   - scope:
       path: ""
-      type: post
+      type: posts
     values:
+      layout: post
       tags: other
 
-home_post_limit: 5
+exclude:
+  - vendor
+  - .bundle
+  - README.md
+  - Gemfile
+  - Gemfile.lock
