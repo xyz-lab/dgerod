@@ -12,17 +12,27 @@ redirect_from:
   <h2>Scratchpad</h2>
   <p>Quick notes about things I see in my daily work, and brief explanations of some projects I worked on.</p>
 
+  <p class="tag-filter" hidden><span class="tag-filter-text"></span> · <a href="{{ '/blog/' | relative_url }}" class="tag-filter-clear">Show all</a></p>
+
   {%- assign years = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
   {%- for year in years %}
-  <h3 class="year">{{ year.name }}</h3>
-  <ul class="posts">
-    {%- for post in year.items %}
-    <li>
-      <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
-      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
-    </li>
-    {%- endfor %}
-  </ul>
+  <div class="year-group">
+    <h3 class="year">{{ year.name }}</h3>
+    <ul class="posts">
+      {%- for post in year.items %}
+      {%- capture post_tags %}{% for tag in post.tags %}{% if tag != 'other' %}tag-{{ tag | slugify }} {% endif %}{% endfor %}{% endcapture %}
+      <li data-tags="{{ post_tags | strip }}">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+        <div class="post-tags">
+          {%- for tag in post.tags %}{% if tag != 'other' %}
+          <a class="tag" href="#tag-{{ tag | slugify }}" data-tag="tag-{{ tag | slugify }}">{{ tag }}</a>
+          {%- endif %}{% endfor %}
+        </div>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
   {%- endfor %}
 </section>
 
@@ -34,38 +44,68 @@ redirect_from:
     <a class="tag" href="#tag-{{ tag[0] | slugify }}" data-tag="tag-{{ tag[0] | slugify }}">{{ tag[0] }}</a>
     {%- endif %}{% endfor %}
   </div>
-
-  {%- for tag in tags %}{% if tag[0] != 'other' %}
-  <div class="tag-posts" id="tag-{{ tag[0] | slugify }}">
-    <h3 class="tag-heading">{{ tag[0] }}</h3>
-    <ul class="tag-list">
-      {%- for post in tag[1] %}
-      <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a> <span class="muted">{{ post.date | date: "%b %Y" }}</span></li>
-      {%- endfor %}
-    </ul>
-  </div>
-  {%- endif %}{% endfor %}
 </aside>
 </div>
 
 <script>
-  // Tag cloud: show only the posts of the selected tag (also from #tag-... links in posts).
+  // Tags: click tags (in the cloud or under a post) to filter the list of posts.
+  // Several tags can be selected: only posts that have ALL of them are shown.
+  // Click a selected tag again to unselect it; "Show all" clears the filter.
+  // The selection is kept in the URL (#tag-a,tag-b), so links from posts open filtered.
   (function () {
-    var groups = document.querySelectorAll(".tag-posts");
-    var links = document.querySelectorAll(".tag-cloud .tag");
-    function select(id) {
-      groups.forEach(function (g) { g.hidden = g.id !== id; });
-      links.forEach(function (a) { a.classList.toggle("active", a.getAttribute("data-tag") === id); });
+    var posts = document.querySelectorAll(".posts li[data-tags]");
+    var years = document.querySelectorAll(".year-group");
+    var tags = document.querySelectorAll("a.tag[data-tag]");
+    var filter = document.querySelector(".tag-filter");
+    var filterText = document.querySelector(".tag-filter-text");
+    var names = {};
+    tags.forEach(function (a) { names[a.getAttribute("data-tag")] = a.textContent; });
+    var selected = [];
+
+    function has(li, id) { return (" " + li.getAttribute("data-tags") + " ").indexOf(" " + id + " ") !== -1; }
+
+    function apply() {
+      selected = selected.filter(function (id) { return names[id]; });  // ignore unknown tags
+      tags.forEach(function (a) { a.classList.toggle("active", selected.indexOf(a.getAttribute("data-tag")) !== -1); });
+      var shown = 0;
+      posts.forEach(function (li) {
+        li.hidden = !selected.every(function (id) { return has(li, id); });
+        li.classList.remove("last-visible");
+        if (!li.hidden) shown++;
+      });
+      years.forEach(function (y) {
+        var visible = y.querySelectorAll(".posts li:not([hidden])");
+        y.hidden = visible.length === 0;
+        if (visible.length) visible[visible.length - 1].classList.add("last-visible");
+      });
+      var list = selected.map(function (id) { return "\u201c" + names[id] + "\u201d"; }).join(" + ");
+      filter.hidden = selected.length === 0;
+      filterText.textContent = shown
+        ? "Posts tagged " + list + " (" + shown + ")"
+        : "No posts tagged " + list;
+      history.replaceState(null, "", selected.length ? "#" + selected.join(",") : location.pathname);
     }
-    links.forEach(function (a) {
+
+    function fromHash() {
+      selected = location.hash.slice(1).split(",").filter(Boolean);
+      apply();
+    }
+
+    tags.forEach(function (a) {
       a.addEventListener("click", function (e) {
         e.preventDefault();
         var id = a.getAttribute("data-tag");
-        var open = a.classList.contains("active");
-        select(open ? "" : id);
-        history.replaceState(null, "", open ? location.pathname : "#" + id);
+        var k = selected.indexOf(id);
+        if (k === -1) selected.push(id); else selected.splice(k, 1);
+        apply();
       });
     });
-    select(location.hash.slice(1));
+    document.querySelector(".tag-filter-clear").addEventListener("click", function (e) {
+      e.preventDefault();
+      selected = [];
+      apply();
+    });
+    window.addEventListener("hashchange", fromHash);
+    fromHash();
   })();
 </script>
