@@ -49,7 +49,8 @@ a:hover { text-decoration: underline; }
 main { max-width: 980px; margin: 0 auto; padding: 32px 16px 48px; }
 .tagline {
   text-align: center;
-  font-size: 22px;
+  font-size: 17px;
+  font-style: italic;
   font-weight: 300;
   margin: 8px 0 32px;
 }
