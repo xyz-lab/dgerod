@@ -8,7 +8,7 @@
 ├── about-me.html         About me
 ├── style.css             Styles for the whole site
 ├── images/               Logo and About me photo
-├── portfolio/            Portfolio slideshow images (01.jpg … 30.jpg)
+├── portfolio/            Portfolio slideshow images + captions.md (captions and links)
 ├── blog/
 │   ├── index.html        Blog page (/blog/): posts by year and by tag
 │   ├── _posts/           Blog posts, in Markdown
@@ -91,7 +91,7 @@ and open http://localhost:4000. The site rebuilds when a file changes; just relo
 ## Maintenance
 
 - **Menu:** it lives in three places: `index.html`, `about-me.html` and `_layouts/default.html`. If you change it, change all three.
-- **Portfolio images:** they are in `portfolio/` and listed in the `<script>` at the end of `index.html` (the `FILES` array). To add one, copy the image and add its name to the array.
+- **Portfolio images:** they are in `portfolio/`, named `NN.ext` or `NN-M.ext` (`NN` = group, `M` = photo in the group); the slideshow shows them ordered by file name. Their captions and links are in the table of `portfolio/captions.md`. To add a photo, copy it into `portfolio/` and add a row to the table. The page reads the table when it loads, so to preview it locally you need a web server (`bundle exec jekyll serve` or `python3 -m http.server`), not the file opened directly.
 - **Portfolio projects:** loaded from GitHub when the page opens: every repo of `dgerod` with the topic `portfolio`, most starred first. To show or hide a repo, add or remove that topic on GitHub (repo page → ⚙ next to "About" → Topics). If GitHub cannot be reached or no repo has the topic, a message with a link to the GitHub repositories is shown instead.
 - **Lifestream:** uses the official X widget. It may not load for visitors who are not logged in to X, so there is a fallback link.
 

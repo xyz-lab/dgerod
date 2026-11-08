@@ -31,6 +31,7 @@
       <h2>Portfolio</h2>
       <div class="slideshow" data-base="portfolio/" aria-label="Portfolio images">
         <div class="slides"></div>
+        <p class="slide-caption" aria-live="polite"></p>
         <div class="slide-nav"></div>
       </div>
       <div class="portfolio" id="projects"></div>
@@ -53,22 +54,35 @@
     <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
     · <a href="feed.xml">RSS</a>
   </footer>
-  <script>    
+  <script>
     (function () {
-      var FILES = ["01.jpg","02.png","03.jpg","04.jpg","05.jpg","06.jpg","07.png","08.jpg","09.jpg","10.jpg",
-                   "11.jpg","12.jpg","13.png","14.jpg","15.jpg","16.png","17.png","18.png","19.jpg","20.jpg",
-                   "21.jpg","22.jpg","23.jpg","24.png","25.png","26.jpg","27.png","28.png","29.jpg","30.jpg"];
+      var TABLE = "portfolio/captions.md";
 
-      document.querySelectorAll(".slideshow").forEach(function (root) {
+      function parse_portfolio_table(md) {
+        var rows = [];
+        md.split("\n").forEach(function (line) {
+          line = line.trim();
+          if (line.charAt(0) !== "|") return;
+          var cells = line.replace(/^\|/, "").replace(/\|$/, "").split("|").map(function (c) { return c.trim(); });
+          if (cells.length < 2 || /^-+$/.test(cells[0].replace(/[:\s]/g, ""))) return;
+          var m = cells[0].match(/src="([^"]+)"/) || cells[0].match(/\(([^)]+)\)/) || cells[0].match(/([\w.-]+\.(?:jpe?g|png|gif|webp))/i);
+          if (!m) return;  // header row or row without a photo
+          rows.push({ file: m[1], caption: cells[1] || "", link: cells[2] || "" });
+        });
+        return rows.sort(function (a, b) { return a.file < b.file ? -1 : a.file > b.file ? 1 : 0; });
+      }
+
+      function build(root, SLIDES) {
         var base = root.getAttribute("data-base") || "";
         var slides = root.querySelector(".slides");
+        var caption = root.querySelector(".slide-caption");
         var nav = root.querySelector(".slide-nav");
         var current = 0, timer;
 
-        FILES.forEach(function (f, i) {
+        SLIDES.forEach(function (s, i) {
           var img = document.createElement("img");
-          img.src = base + f;
-          img.alt = "Portfolio image " + (i + 1);
+          img.src = base + s.file;
+          img.alt = s.caption || "Portfolio image " + (i + 1);
           img.loading = i === 0 ? "eager" : "lazy";
           if (i === 0) img.className = "active";
           slides.appendChild(img);
@@ -76,24 +90,49 @@
           var b = document.createElement("button");
           b.type = "button";
           b.textContent = i + 1;
+          b.setAttribute("aria-label", "Image " + (i + 1) + (s.caption ? ": " + s.caption : ""));
           if (i === 0) b.className = "active";
           b.addEventListener("click", function () { show(i); restart(); });
           nav.appendChild(b);
         });
+
+        function setCaption(s) {
+          caption.textContent = s.caption;
+          if (s.link) {
+            var a = document.createElement("a");
+            a.href = s.link;
+            a.textContent = "Read more \u2192";
+            caption.appendChild(document.createTextNode(" "));
+            caption.appendChild(a);
+          }
+        }
 
         var imgs = slides.children, btns = nav.children;
         function show(i) {
           imgs[current].classList.remove("active"); btns[current].classList.remove("active");
           current = i;
           imgs[current].classList.add("active"); btns[current].classList.add("active");
+          setCaption(SLIDES[current]);
         }
         function restart() {
           clearInterval(timer);
-          timer = setInterval(function () { show((current + 1) % FILES.length); }, 3000);
+          timer = setInterval(function () { show((current + 1) % SLIDES.length); }, 4000);
         }
         root.addEventListener("mouseenter", function () { clearInterval(timer); });
         root.addEventListener("mouseleave", restart);
+        setCaption(SLIDES[0]);
         restart();
+      }
+
+      document.querySelectorAll(".slideshow").forEach(function (root) {
+        fetch(TABLE)
+          .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+          .then(function (md) {
+            var slides = parse_portfolio_table(md);
+            if (!slides.length) throw new Error("empty");
+            build(root, slides);
+          })
+          .catch(function () { root.hidden = true; });
       });
     })();
   </script>
