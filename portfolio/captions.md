@@ -39,3 +39,10 @@ Captions and links of the photos in the home page slideshow.
 | <img src="13-1.png" width="120"><br>`13-1.png` | CAD model of a delta-2 robot (2012)| blog/2012/06/02/kinematics-delta-2-robot.html |
 | <img src="13-2.png" width="120"><br>`13-2.png` | Delta-2 robot geometry: links and end-effector (2012) | blog/2012/06/02/kinematics-delta-2-robot.html |
 | <img src="13-3.png" width="120"><br>`13-3.png` | Workspace of a delta-2 robot (2012) | blog/2012/06/02/kinematics-delta-2-robot.html |
+| <img src="14.jpg" width="120"><br>`14.jpg` | “Cat and mouse” game with ROS, MORSE and a CRAM plan (2013) | blog/2013/01/26/cat-and-mouse-in-ros-morse-and-cram.html |
+| <img src="15.png" width="120"><br>`15.png` | Flexible machines with robotics and vision, talk at ISOLA (2014) | blog/2014/10/12/talk-isola-2014.html |
+| <img src="16.jpg" width="120"><br>`16.jpg` | KUKA LWR simulated in MORSE and controlled with ROS and MoveIt (2014) | blog/2014/06/10/control-klwr-using-morse-and-ros.html |
+| <img src="17.jpg" width="120"><br>`17.jpg` | Application in C++, Qt and OpenGL to simulate a RU link (2014) | blog/2014/07/01/app-simulate-RU-link.html |
+| <img src="18-1.png" width="120"><br>`18-1.png` | Architecture of the visualizer: OMRON NJ, EtherCAT slave simulator and ROS (2015) | blog/2015/04/19/robot-visualizer-using-ros-and-ecat.html |
+| <img src="18-2.png" width="120"><br>`18-2.png` | Visualizer of delta robots done with ROS and EtherCAT (2015) | blog/2015/04/19/robot-visualizer-using-ros-and-ecat.html |
+| <img src="18-3.png" width="120"><br>`18-3.png` | Real delta robot next to its ROS visualizer (2015) | blog/2015/04/19/robot-visualizer-using-ros-and-ecat.html |
