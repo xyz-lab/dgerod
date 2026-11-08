@@ -17,9 +17,9 @@ Captions and links of the photos in the home page slideshow.
 | <img src="03-1.jpg" width="120"><br>`03-1.jpg` | CRS robot arm used in my final degree project, a distributed 3D vision system (2002) | https://www.researchgate.net/publication/258175171_A_distributed_3D_vision_system |
 | <img src="03-2.jpg" width="120"><br>`03-2.jpg` | Joints of the 6-axis CRS robot arm (2002) | https://www.researchgate.net/publication/258175171_A_distributed_3D_vision_system |
 | <img src="04.png" width="120"><br>`04.png` | Robotic cell for manufacturing Trencadís mosaics (2002) | https://www.researchgate.net/publication/229151042_Intelligent_robotic_cell_for_Trencadspl_inodotspl_acutes_mosaics_manufacturing |
-| <img src="05-1.png" width="120"><br>`05-1.png` | “Cat and mouse” game simulated in MORSE with ROS | blog/2013/01/26/cat-and-mouse-in-ros-morse-and-cram.html |
-| <img src="05-2.png" width="120"><br>`05-2.png` | Electronics to control the cardboard delta-2 robot | blog/2012/10/08/control-delta-2-of-cardboard.html |
-| <img src="06.jpg" width="120"><br>`06.jpg` | Simulation of a robotic work cell using Virtual Robot Simulator (2003) |  |
+| <img src="05-1.png" width="120"><br>`05-1.png` | Follower and leader mobile robots simulated in VRS (2003) | |
+| <img src="05-2.png" width="120"><br>`05-2.png` | Sensor system of the follower robot (2003) | |
+| <img src="06.jpg" width="120"><br>`06.jpg` | Simulation of a robotic work cell using Virtual Robot Simulator (2004) |  |
 | <img src="07-1.png" width="120"><br>`07-1.png` | Collision detection using Minkowski spaces for Virtual Robot Simulator (2004) |  |
 | <img src="07-2.png" width="120"><br>`07-2.png` | Robot arm model in the Minkowski-space collision detection library (2004) |  |
 | <img src="08-1.jpg" width="120"><br>`08-1.jpg` | Robstar, a mobile manipulator for the EU JRC (2007) |  |
@@ -29,13 +29,13 @@ Captions and links of the photos in the home page slideshow.
 | <img src="09-2.jpg" width="120"><br>`09-2.jpg` | Prototypes of the MoviRobotics security mobile robot (2009) |  |
 | <img src="10.jpg" width="120"><br>`10.jpg` | OMRON Trajexia motion controller (2009) | blog/2015/04/19/robot-visualizer-using-ros-and-ecat.html |
 | <img src="11-1.png" width="120"><br>`11-1.png` | Kinematic diagram of a delta-3 robot | blog/2011/09/16/kinematics-delta-3-robot.html |
-| <img src="11-2.jpg" width="120"><br>`11-2.jpg` | Drawings of the links of a cardboard delta-3 robot | blog/2010/09/25/studying-delta-3-robot.html |
-| <img src="11-3.jpg" width="120"><br>`11-3.jpg` | Building a cardboard model of a delta-3 robot | blog/2010/09/25/studying-delta-3-robot.html |
-| <img src="11-4.png" width="120"><br>`11-4.png` | Workspace of a delta-3 robot computed in Scilab | blog/2010/09/25/studying-delta-3-robot.html |
-| <img src="12.png" width="120"><br>`12.png` | CAD model of a delta-2 robot | blog/2012/06/02/kinematics-delta-2-robot.html |
-| <img src="13-1.png" width="120"><br>`13-1.png` | Delta-2 robot geometry: links and end-effector | blog/2012/06/02/kinematics-delta-2-robot.html |
-| <img src="13-2.png" width="120"><br>`13-2.png` | Workspace of a delta-2 robot | blog/2012/06/02/kinematics-delta-2-robot.html |
-| <img src="14-1.jpg" width="120"><br>`14-1.jpg` | OMRON NJ-Robotics controller (2011) |  |
-| <img src="14-2.jpg" width="120"><br>`14-2.jpg` | Delta robot, detail of the parallel arms |  |
-| <img src="14-3.jpg" width="120"><br>`14-3.jpg` | Delta robot arm joint |  |
-| <img src="14-4.jpg" width="120"><br>`14-4.jpg` | Industrial delta robot |  |
+| <img src="11-2.jpg" width="120"><br>`11-2.jpg` | Drawings of the links of a cardboard delta-3 robot (2011) | blog/2010/09/25/studying-delta-3-robot.html |
+| <img src="11-3.jpg" width="120"><br>`11-3.jpg` | Building a cardboard model of a delta-3 robot (2011) | blog/2010/09/25/studying-delta-3-robot.html |
+| <img src="11-4.png" width="120"><br>`11-4.png` | Workspace of a delta-3 robot computed in Scilab (2011) | blog/2010/09/25/studying-delta-3-robot.html |
+| <img src="12-1.jpg" width="120"><br>`12-1.jpg` | OMRON NJ-Robotics controller (2011) |  |
+| <img src="12-2.jpg" width="120"><br>`12-2.jpg` | Delta-3 robot (2011) |  |
+| <img src="12-3.jpg" width="120"><br>`12-3.jpg` | Delta-3 robot, detail of the parallel arms (2011) |  |
+| <img src="12-4.jpg" width="120"><br>`12-4.jpg` | Delta-3 robot joint (2011) |  |
+| <img src="13-1.png" width="120"><br>`13-1.png` | CAD model of a delta-2 robot (2012)| blog/2012/06/02/kinematics-delta-2-robot.html |
+| <img src="13-2.png" width="120"><br>`13-2.png` | Delta-2 robot geometry: links and end-effector (2012) | blog/2012/06/02/kinematics-delta-2-robot.html |
+| <img src="13-3.png" width="120"><br>`13-3.png` | Workspace of a delta-2 robot (2012) | blog/2012/06/02/kinematics-delta-2-robot.html |
