@@ -28,7 +28,7 @@ Captions and links of the photos in the home page slideshow.
 | <img src="09-1.jpg" width="120"><br>`09-1.jpg` | Security mobile robot developed for MoviRobotics (2009) |  |
 | <img src="09-2.jpg" width="120"><br>`09-2.jpg` | Prototypes of the MoviRobotics security mobile robot (2009) |  |
 | <img src="10.jpg" width="120"><br>`10.jpg` | OMRON Trajexia motion controller (2009) | blog/2015/04/19/robot-visualizer-using-ros-and-ecat.html |
-| <img src="11-1.png" width="120"><br>`11-1.png` | Kinematic diagram of a delta-3 robot | blog/2011/09/16/kinematics-delta-3-robot.html |
+| <img src="11-1.png" width="120"><br>`11-1.png` | Kinematic diagram of a delta-3 robot (2011) | blog/2011/09/16/kinematics-delta-3-robot.html |
 | <img src="11-2.jpg" width="120"><br>`11-2.jpg` | Drawings of the links of a cardboard delta-3 robot (2011) | blog/2010/09/25/studying-delta-3-robot.html |
 | <img src="11-3.jpg" width="120"><br>`11-3.jpg` | Building a cardboard model of a delta-3 robot (2011) | blog/2010/09/25/studying-delta-3-robot.html |
 | <img src="11-4.png" width="120"><br>`11-4.png` | Workspace of a delta-3 robot computed in Scilab (2011) | blog/2010/09/25/studying-delta-3-robot.html |
