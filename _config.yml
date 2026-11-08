@@ -8,7 +8,7 @@ lang: en
 twitter:
   username: dgerod
 
-permalink: /:year/:month/:day/:title:output_ext
+permalink: /blog/:year/:month/:day/:title:output_ext
 
 markdown: kramdown
 highlighter: rouge

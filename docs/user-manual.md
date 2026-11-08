@@ -61,7 +61,7 @@ Menu: Home · Blog · Twitter · LinkedIn · GitHub · About me.
    Text...
    ```
 
-3. It is published at `/YYYY/MM/DD/short-title.html` and shows up in `/blog/` and in the RSS feed.
+3. It is published at `/blog/YYYY/MM/DD/short-title.html` and shows up in `/blog/` and in the RSS feed.
 
 Drafts go in `blog/_drafts/` without a date in the file name. To preview them locally: `bundle exec jekyll serve --drafts`.
 
@@ -99,10 +99,8 @@ and open http://localhost:4000. The site rebuilds when a file changes; just relo
 
 The site lives in the `xyz-lab/dgerod` repo and is published with GitHub Pages at https://dgerod.xyz-lab.org.es/ (the `CNAME` file sets the custom domain; in IONOS, `dgerod.xyz-lab.org.es` is a CNAME to `xyz-lab.github.io`). After a push to the main branch, GitHub Pages builds and publishes the site within a few minutes.
 
-The old address https://dgerod.github.io/ (repo `dgerod/dgerod.github.io`) only redirects to the new domain, keeping the path.
+URLs:
 
-URLs from the old blog are preserved:
-
-- posts keep their URL (`/YYYY/MM/DD/title.html`), even though they live in `blog/` (the `permalink` setting in `_config.yml` keeps `blog/` out of the URL);
+- posts are at `/blog/YYYY/MM/DD/title.html` (set by `permalink` in `_config.yml`);
 - `/blog.html`, `/archive.html` and `/by_tags.html` redirect to `/blog/`;
-- the RSS feed is still at `/feed.xml`.
+- the RSS feed is at `/feed.xml`.
