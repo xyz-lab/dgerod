@@ -5,4 +5,5 @@ vendor/
 .bundle/
 tmp/
 Gemfile.lock
-todo.md
+docs/todo.md
+docs/about.md
