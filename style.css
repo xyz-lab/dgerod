@@ -163,6 +163,30 @@ h2 {
 .links { columns: 2; padding-left: 20px; }
 @media (max-width: 500px) { .links { columns: 1; } }
 
+/* Projects page */
+.case {
+  display: grid;
+  grid-template-columns: 240px minmax(0, 1fr);
+  gap: 24px;
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border);
+  align-items: start;
+  scroll-margin-top: 16px;
+}
+.case:first-of-type { padding-top: 8px; }
+.case:last-of-type { border-bottom: 0; padding-bottom: 0; }
+.case img { width: 100%; height: auto; max-height: 280px; object-fit: contain; border-radius: 4px; display: block; }
+.case-figure { margin: 0; }
+.case-figure figcaption { margin-top: 6px; font-size: 12px; color: var(--muted); }
+.case h3 { margin: 0 0 2px; font-size: 18px; font-weight: 600; }
+.case p { margin: 0 0 10px; }
+.case .case-meta { color: var(--muted); font-size: 14px; }
+.case .case-links { font-size: 14px; margin-bottom: 0; }
+@media (max-width: 640px) {
+  .case { grid-template-columns: 1fr; gap: 12px; }
+  .case img { max-width: 320px; }
+}
+
 /* Footer */
 footer {
   text-align: center;

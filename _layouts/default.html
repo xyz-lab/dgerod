@@ -13,6 +13,7 @@
       <a class="logo" href="{{ '/' | relative_url }}"><img src="{{ '/images/logo.png' | relative_url }}" alt="Diego Escudero"></a>
       <ul class="nav">
         <li><a {% if page.url == '/' %}class="active" {% endif %}href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a href="{{ '/projects.html' | relative_url }}">Projects</a></li>
         <li><a {% if page.url == '/blog/' or page.layout == 'post' %}class="active" {% endif %}href="{{ '/blog/' | relative_url }}">Scratchpad</a></li>
         <li><a href="https://x.com/dgerod">X / Twitter</a></li>
         <li><a href="https://www.linkedin.com/in/dgerod">LinkedIn</a></li>

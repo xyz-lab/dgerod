@@ -1,0 +1,267 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diego Escudero - Projects</title>
+  <meta name="description" content="Robotics, computer vision and software projects by Diego Escudero, from 2000 to 2025.">
+  <link rel="alternate" type="application/atom+xml" title="Diego Escudero" href="feed.xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="index.html"><img src="images/logo.png" alt="Diego Escudero"></a>
+      <ul class="nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="projects.html">Projects</a></li>
+        <li><a href="blog/">Scratchpad</a></li>
+        <li><a href="https://x.com/dgerod">X / Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/dgerod">LinkedIn</a></li>
+        <li><a href="https://github.com/dgerod">GitHub</a></li>
+        <li><a href="about-me.html">About me</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <section class="box">
+      <h2>Projects</h2>
+
+      <article class="case" id="phd">
+        <img src="portfolio/24-1.jpg" alt="Robot with a wrist camera picking parts from a box">
+        <div>
+          <h3>PhD thesis: the anchoring problem in robotic kitting</h3>
+          <p class="case-meta">2025 · Universitat Politècnica de Catalunya</p>
+          <p>“Dealing with the Anchoring Problem in Robotic Kitting using Behavior Trees”,
+            supervised by René Alquézar and Joan Aranda. Kitting means picking different
+            parts from containers and grouping them into kits for a flexible machine. To
+            cope with new parts and tasks, a robot has to link its symbolic actions, such as
+            find-part, to low-level instructions, such as move-arm-to.</p>
+          <p>I proposed GP-CBT, an algorithm that combines genetic programming with
+            conditional behavior trees to learn those links automatically, under the
+            supervision of an operator who can add task requirements. Knowledge from tasks
+            already learned speeds up new ones. The behavior trees were learned on an
+            environment based on ARIAC 2018 and then executed on two real Omron robots,
+            the i4L-350 and the TM5-900, showing that they can be transferred between robots.</p>
+          <p class="case-links"><a href="https://doi.org/10.5821/dissertation-2117-449775">PhD thesis</a> · <a href="https://link.springer.com/article/10.1007/s10489-025-06373-w">Article in Applied Intelligence, vol. 55, Springer (2025)</a></p>
+        </div>
+      </article>
+
+      <article class="case" id="nj-robotics">
+        <img src="portfolio/16-2.jpg" alt="Delta-3 robot">
+        <div>
+          <h3>NJ-Robotics: robot functions in a machine controller</h3>
+          <p class="case-meta">2010–2014 · OMRON Industrial Automation</p>
+          <p>Adding robot functionality for the packaging industry to NJ, a controller
+            that combines a PLC engine and a motion control engine. It covers Cartesian
+            XYZ, SCARA, delta-2 and delta-3 robots, and synchronising a robot with a conveyor.</p>
+          <p>The robots (kinematics, workspace, trajectories) were analysed and simulated
+            in Scilab, then prototyped on a TrajeXia controller with a Codian robot. The
+            functions were later integrated into NJ as a new robot control subsystem,
+            written in ANSI C99 on QNX.</p>
+          <p class="case-links"><a href="blog/2011/09/16/kinematics-delta-3-robot.html">Delta-3 kinematics</a> · <a href="blog/2012/06/02/kinematics-delta-2-robot.html">Delta-2 kinematics</a></p>
+        </div>
+      </article>
+
+      <article class="case" id="trajexia">
+        <img src="portfolio/13-1.jpg" alt="OMRON Trajexia motion controller">
+        <div>
+          <h3>Robotics package for TrajeXia</h3>
+          <p class="case-meta">2010–2011 · OMRON Industrial Automation</p>
+          <p>Extra functions for TrajeXia, a stand-alone motion controller over EtherCAT:
+            delta-3 kinematics and workspace, coordinate system management and conveyor
+            tracking. The firmware belongs to <a href="https://www.triomotion.com/">Trio Motion</a>, who implemented the functions.
+            My part was reviewing requirements, giving robotics support to their
+            developers and running the acceptance tests.</p>
+        </div>
+      </article>
+
+      <article class="case" id="mce">
+        <img src="portfolio/14-1.png" alt="Position and velocity profiles of an axis">
+        <div>
+          <h3>Motion Control Engine of NJ</h3>
+          <p class="case-meta">2009 · OMRON Industrial Automation</p>
+          <p>Motion profile generation for all the axes of a machine, compliant with
+            PLCopen: single-axis moves in position, velocity and torque, synchronised axes,
+            and groups of axes such as Cartesian trajectories. I worked on the analysis and
+            simulation of the algorithms in Octave and Maxima, and on a prototype of the
+            engine in ANSI C99.</p>
+        </div>
+      </article>
+
+      <article class="case" id="movirobotics">
+        <img src="portfolio/12-2.jpg" alt="Prototypes of the MoviRobotics security robot">
+        <div>
+          <h3>Security mobile robot</h3>
+          <p class="case-meta">2008 · MoviRobotics</p>
+          <p>Development of an autonomous ground vehicle for the security and homeland
+            security sectors.</p>
+        </div>
+      </article>
+
+      <article class="case" id="vrs">
+        <figure class="case-figure">
+          <img src="portfolio/11-4.jpg" alt="Robotic work cell simulated in Virtual Robot Simulator">
+          <figcaption>Screenshot of Virtual Robot Simulator, not of the GUI component.</figcaption>
+        </figure>
+        <div>
+          <h3>Virtual Robot Simulator as a GUI component</h3>
+          <p class="case-meta">2007–2008 · RIALTO Lab., European Commission, Joint Research Centre</p>
+          <p>Virtual Robot Simulator (VRS), from the Robotics Group of the UPV, simulates
+            industrial robots and multi-robot cells. I turned it
+            into a graphic component that other applications can embed as a robot viewer,
+            which was used in the Robstar control application. That meant separating simulation from graphics
+            in its core and simplifying its client communication library.</p>
+        </div>
+      </article>
+
+      <article class="case" id="robstar">
+        <img src="portfolio/11-2.jpg" alt="Robstar with a container on its transport pad">
+        <div>
+          <h3>Robstar: a robot for nuclear storage areas</h3>
+          <p class="case-meta">2007–2008 · RIALTO Lab., European Commission, Joint Research Centre</p>
+          <p>A mobile manipulator for inventory and handling tasks in a storage area for
+            nuclear material: a lightweight 6-DOF SCARA-type arm on a differential vehicle,
+            with a transport pad for one PuO<sub>2</sub> container.</p>
+          <p>The vehicle carries bumpers, an inertial system and two lasers for navigation
+            and safety. The arm has a force/torque sensor and a CCD camera with a vision
+            system. A single embedded computer runs both, using GENERIS, the JRC's
+            multi-robot control software on VxWorks.</p>
+          <p>I adapted GENERIS to work with mobile robots and developed griXL, a high-level
+            library on top of GRI, the GENERIS remote interface. Both were applied in
+            Robstar. I also worked at system level, integrating the robot controller with
+            the vision system.</p>
+          <p class="case-links"><a href="https://www.emerald.com/ir/article-abstract/26/1/26/184043/GENERIS-the-EC-JRC-generalised-software-control">About GENERIS: article by E. Ruiz Morales in Industrial Robot (1999)</a></p>
+        </div>
+      </article>
+
+      <article class="case" id="radardem">
+        <img src="portfolio/09-3.png" alt="RadarDEM 3D viewer window">
+        <div>
+          <h3>RadarDEM: a 3D viewer for avalanche monitoring</h3>
+          <p class="case-meta">2006 · European Commission, Joint Research Centre</p>
+          <p>A viewer used to assess the avalanche paths extracted from radar images in the
+            AMTRALA project, by checking that an avalanche moves through natural corridors
+            in the mountain. It overlays the radar image on an orthophoto mounted over a
+            Digital Elevation Model, which can be rotated, panned and zoomed in 3D.</p>
+          <p>Each scene covers about 2 km × 2 km, close to one million points with several
+            colour-coded layers of information. It was written in C++ with OpenGL to handle
+            them efficiently, as a joint work of the SERAC sector and the NUSAF unit of the JRC.</p>
+        </div>
+      </article>
+
+      <article class="case" id="agents">
+        <img src="portfolio/09-2.png" alt="Community of software agents for event detection in images">
+        <div>
+          <h3>Detection of nuclear material with software agents</h3>
+          <p class="case-meta">2004–2006 · NUSAF, European Commission, Joint Research Centre</p>
+          <p>A tool for nuclear inspectors to detect predefined events in a nuclear plant,
+            a huge and cluttered place where platforms and cranes keep moving, so the scene
+            cannot be treated as static. An event is the presence of an object in a given
+            position.</p>
+          <p>The solution is an adaptive community of agents placed on the acquired image,
+            written in C++. An embedded Python engine lets users change the behaviour of
+            the agents with scripts while the system is running.</p>
+        </div>
+      </article>
+
+      <article class="case" id="alis">
+        <img src="portfolio/09-1.png" alt="ALIS surveillance unit">
+        <div>
+          <h3>ALIS integration and Event Viewer</h3>
+          <p class="case-meta">2004–2006 · NUSAF, European Commission, Joint Research Centre</p>
+          <p>ALIS (All-In-One Surveillance) is an autonomous system that acquires images
+            at a set pace and stores them on its on-board PC card. A specific data
+            acquisition module integrated it with RADAR, a multi-sensor remote monitoring
+            system developed under the supervision of DG TREN, and an application called
+            Event Viewer was developed to review the stored images.</p>
+        </div>
+      </article>
+
+      <article class="case" id="acdlib">
+        <img src="portfolio/08-1.png" alt="Collision detection with spherical volumes">
+        <div>
+          <h3>acdLib: a collision detection library</h3>
+          <p class="case-meta">2003</p>
+          <p>A library based on a modification of the GJK algorithm that models objects
+            with spherical volumes: sphere, bi-sphere, tri-sphere and tetra-sphere. It
+            returns whether two objects collide and the distance between them, and it was
+            integrated into Virtual Robot Simulator (VRS).</p>
+        </div>
+      </article>
+
+      <article class="case" id="follower">
+        <img src="portfolio/07-1.png" alt="Follower and leader mobile robots simulated in VRS">
+        <div>
+          <h3>Hybrid control architecture for a differential robot</h3>
+          <p class="case-meta">2003</p>
+          <p>A robot that follows a leader using four distance sensors and an
+            omnidirectional camera. Collision avoidance runs as a high-priority reactive
+            behaviour, while a scheduler manages exploring, locating the leader and
+            locating obstacles. Written in C/C++ and tested in Virtual Robot Simulator.</p>
+        </div>
+      </article>
+
+      <article class="case" id="trencadis">
+        <img src="portfolio/05-1.png" alt="Robotic cell for Trencadís mosaics">
+        <div>
+          <h3>Robotic cell for Trencadís mosaics</h3>
+          <p class="case-meta">2002–2004 · DISA, Universitat Politècnica de València and Trencadís Innovación</p>
+          <p>A production cell with a robot arm, a camera on the arm, two conveyor belts
+            and a computer. The vision system locates the tiles arriving on one belt and
+            recognises their shape once the robot has picked them up; the robot then places
+            them on the other belt.</p>
+          <p class="case-links"><a href="https://www.researchgate.net/publication/229151042_Intelligent_robotic_cell_for_Trencadspl_inodotspl_acutes_mosaics_manufacturing">Article in IEEE Trans. on SMC, Part C (2005)</a></p>
+        </div>
+      </article>
+
+      <article class="case" id="cardboard">
+        <img src="portfolio/03-1.jpg" alt="Cardboard aligner with visual feedback">
+        <div>
+          <h3>Cardboard cutter with visual feedback</h3>
+          <p class="case-meta">2002–2003 · DISA, Universitat Politècnica de València and Smurfit</p>
+          <p>A control system for the cutting stage of a machine that makes cardboard
+            boxes. A 2D vision system measures the displacement of a reference point in the
+            image and feeds it back to correct the cutter.</p>
+        </div>
+      </article>
+
+      <article class="case" id="distributed-vision">
+        <img src="portfolio/04-1.jpg" alt="CRS robot arm">
+        <div>
+          <h3>Distributed 3D vision system</h3>
+          <p class="case-meta">2002 · Final degree project, Universitat Politècnica de València</p>
+          <p>A vision system split with CORBA into acquisition, processing, classification
+            and visualisation, each able to run on a different PC. It locates an object by
+            category and returns its Cartesian position, using Tsai camera calibration and
+            kNN classification. Written in Visual C++ with the Matrox MIL library.</p>
+          <p class="case-links"><a href="https://www.researchgate.net/publication/258175171_A_distributed_3D_vision_system">Article at World Automation Congress (2004)</a></p>
+        </div>
+      </article>
+
+      <article class="case" id="container-help">
+        <figure class="case-figure">
+          <img src="portfolio/02-1.jpg" alt="Spreader of a container crane lifting a container">
+          <figcaption>Illustrative photo, resized: <a href="https://commons.wikimedia.org/wiki/File:Heavy_duty_high_draulic_twin_lift_spreader.png">Joe.Sa1998</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></figcaption>
+        </figure>
+        <div>
+          <h3>Help system for locating containers in a dock</h3>
+          <p class="case-meta">2000–2001 · DISA, Universitat Politècnica de València and Marítima Valenciana</p>
+          <p>Crane operators sit 50–60 metres up and have to fit the crane tool into four
+            holes of 20 × 20 cm on each container. This 3D vision system shows them where
+            the holes are, through image acquisition, camera calibration, image processing
+            and 3D modelling.</p>
+          <p class="case-links"><a href="https://skoge.folk.ntnu.no/prost/proceedings/ifac2002/data/content/02209/abstract.htm">Article at 15th IFAC World Congress (2002)</a></p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    Unless otherwise noted, content is licensed under
+    <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
+    · <a href="feed.xml">RSS</a>
+  </footer>
+</body>
+</html>
