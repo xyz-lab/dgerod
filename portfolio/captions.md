@@ -35,16 +35,15 @@ Captions and links of the photos in the home page slideshow.
 | <img src="11-4.jpg" width="120"><br>`11-4.jpg` | Virtual Robot Simulator as a GUI component for Robstar (2007–2008) | projects.html#vrs |
 | <img src="12-1.jpg" width="120"><br>`12-1.jpg` | Security mobile robot developed for MoviRobotics (2008) | projects.html#movirobotics |
 | <img src="12-2.jpg" width="120"><br>`12-2.jpg` | Prototypes of the MoviRobotics security mobile robot (2008) |  |
-| <img src="13-1.jpg" width="120"><br>`13-1.jpg` | OMRON Trajexia motion controller (2010–2011) | projects.html#trajexia |
-| <img src="14-1.png" width="120"><br>`14-1.png` | Position and velocity profiles of the motion controller (2009) | projects.html#mce |
+| <img src="13-1.jpg" width="120"><br>`13-1.jpg` | Motion Control Engine of NJ (2009) | projects.html#mce |
+| <img src="14-1.jpg" width="120"><br>`14-1.jpg` | OMRON Trajexia motion controller (2010–2011) | projects.html#trajexia |
 | <img src="15-1.png" width="120"><br>`15-1.png` | Kinematic diagram of a delta-3 robot (2011) | blog/2011/09/16/kinematics-delta-3-robot.html |
 | <img src="15-2.jpg" width="120"><br>`15-2.jpg` | Building a cardboard model of a delta-3 robot (2011) | blog/2010/09/25/studying-delta-3-robot.html |
 | <img src="15-3.jpg" width="120"><br>`15-3.jpg` | Drawings of the links of a cardboard delta-3 robot (2011) | |
 | <img src="15-4.png" width="120"><br>`15-4.png` | Workspace of a delta-3 robot computed in Scilab (2011) | |
-| <img src="16-1.jpg" width="120"><br>`16-1.jpg` | OMRON NJ-Robotics controller (2011) | projects.html#nj-robotics |
-| <img src="16-2.jpg" width="120"><br>`16-2.jpg` | Delta-3 robot (2011) |  |
-| <img src="16-3.jpg" width="120"><br>`16-3.jpg` | Delta-3 robot, detail of the parallel arms (2011) |  |
-| <img src="16-4.jpg" width="120"><br>`16-4.jpg` | Delta-3 robot joint (2011) |  |
+| <img src="16-1.jpg" width="120"><br>`16-1.jpg` | Delta-3 robot (2011) | projects.html#nj-robotics |
+| <img src="16-2.jpg" width="120"><br>`16-2.jpg` | Delta-3 robot, detail of the parallel arms (2011) |  |
+| <img src="16-3.jpg" width="120"><br>`16-3.jpg` | Delta-3 robot joint (2011) |  |
 | <img src="17-1.png" width="120"><br>`17-1.png` | CAD model of a delta-2 robot (2012)| blog/2012/06/02/kinematics-delta-2-robot.html |
 | <img src="17-2.png" width="120"><br>`17-2.png` | Delta-2 robot geometry: links and end-effector (2012) | |
 | <img src="17-3.png" width="120"><br>`17-3.png` | Workspace of a delta-2 robot (2012) | |
