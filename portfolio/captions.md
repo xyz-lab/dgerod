@@ -13,7 +13,7 @@ Captions and links of the photos in the home page slideshow.
 | <img src="01-1.jpg" width="120"><br>`01-1.jpg` | ABB robot in the Robotics Lab. of the DISA/UPV (2000–2004) | https://www.upv.es/entidades/disa/ |
 | <img src="01-2.jpg" width="120"><br>`01-2.jpg` | Force sensor in the Robotics Lab. of the DISA/UPV (2000–2004) | |
 | <img src="01-3.jpg" width="120"><br>`01-3.jpg` | Rhino XR-1 robot in the Robotics Lab. of the DISA/UPV (2000–2004) | |
-| <img src="02-1.jpg" width="120"><br>`02-1.jpg` | Container crane spreader (2001). Illustrative photo: Joe.Sa1998, CC BY-SA 4.0 | projects/#container-help |
+| <img src="02-1.jpg" width="120"><br>`02-1.jpg` | Container crane spreader (2001). Illustrative image: Joe.Sa1998, CC BY-SA 4.0 | projects/#container-help |
 | <img src="02-2.png" width="120"><br>`02-2.png` | Container seen by the camera of the crane vision system (2001) |  |
 | <img src="03-1.jpg" width="120"><br>`03-1.jpg` | Cardboard aligner with visual feedback for Smurfit (2001) | https://www.smurfitwestrock.com/ |
 | <img src="04-1.jpg" width="120"><br>`04-1.jpg` | CRS robot arm used in my final degree project, a distributed 3D vision system (2002) | https://www.researchgate.net/publication/258175171_A_distributed_3D_vision_system |
