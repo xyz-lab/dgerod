@@ -31,7 +31,7 @@
     <section class="box">
       <h2>Portfolio</h2>
       <div class="slideshow" data-base="portfolio/" aria-label="Portfolio images">
-        <div class="slides"></div>
+        <div class="slides-wrap"><div class="slides"></div></div>
         <p class="slide-caption" aria-live="polite"></p>
         <div class="slide-nav"></div>
       </div>
@@ -119,6 +119,23 @@
           clearInterval(timer);
           timer = setInterval(function () { show((current + 1) % SLIDES.length); }, 4000);
         }
+        function step(d) { show((current + d + SLIDES.length) % SLIDES.length); }
+        [["prev", "‹", "Previous image", -1], ["next", "›", "Next image", 1]].forEach(function (a) {
+          var b = document.createElement("button");
+          b.type = "button";
+          b.className = "slide-arrow " + a[0];
+          b.textContent = a[1];
+          b.setAttribute("aria-label", a[2]);
+          b.addEventListener("click", function () { step(a[3]); restart(); });
+          slides.parentNode.appendChild(b);
+        });
+        document.addEventListener("keydown", function (e) {
+          var t = e.target.tagName;
+          if (e.altKey || e.ctrlKey || e.metaKey || t === "INPUT" || t === "TEXTAREA") return;
+          if (e.key === "ArrowLeft") { step(-1); restart(); }
+          else if (e.key === "ArrowRight") { step(1); restart(); }
+        });
+
         root.addEventListener("mouseenter", function () { clearInterval(timer); });
         root.addEventListener("mouseleave", restart);
         setCaption(SLIDES[0]);

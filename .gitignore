@@ -1,9 +1,7 @@
 _site/
+tmp/
 .jekyll-cache/
 .sass-cache/
 vendor/
 .bundle/
-tmp/
 Gemfile.lock
-docs/todo.md
-docs/about.md
