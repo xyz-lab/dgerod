@@ -5,21 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Diego Escudero - Projects</title>
   <meta name="description" content="Robotics, computer vision and software projects by Diego Escudero, from 2000 to 2025.">
-  <link rel="alternate" type="application/atom+xml" title="Diego Escudero" href="feed.xml">
-  <link rel="stylesheet" href="style.css">
+  <link rel="alternate" type="application/atom+xml" title="Diego Escudero" href="../feed.xml">
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
   <header class="site-header">
     <div class="inner">
-      <a class="logo" href="index.html"><img src="images/logo.png" alt="Diego Escudero"></a>
+      <a class="logo" href="../index.html"><img src="../images/logo.png" alt="Diego Escudero"></a>
       <ul class="nav">
-        <li><a href="index.html">Home</a></li>
-        <li><a class="active" href="projects.html">Projects</a></li>
-        <li><a href="blog/">Scratchpad</a></li>
+        <li><a href="../index.html">Home</a></li>
+        <li><a class="active" href="./">Projects</a></li>
+        <li><a href="../blog/">Scratchpad</a></li>
         <li><a href="https://x.com/dgerod">X / Twitter</a></li>
         <li><a href="https://www.linkedin.com/in/dgerod">LinkedIn</a></li>
         <li><a href="https://github.com/dgerod">GitHub</a></li>
-        <li><a href="about-me.html">About me</a></li>
+        <li><a href="../about-me.html">About me</a></li>
       </ul>
     </div>
   </header>
@@ -29,7 +29,7 @@
       <h2>Projects</h2>
 
       <article class="case" id="phd">
-        <img src="portfolio/24-1.jpg" alt="Robot with a wrist camera picking parts from a box">
+        <img src="phd.jpg" alt="Robot with a wrist camera picking parts from a box">
         <div>
           <h3>PhD thesis: the anchoring problem in robotic kitting</h3>
           <p class="case-meta">2025 · Universitat Politècnica de Catalunya</p>
@@ -48,37 +48,71 @@
         </div>
       </article>
 
+      <article class="case" id="ric">
+        <img src="ric.jpg" alt="OMRON NJ501-R controller surrounded by the delta, SCARA and articulated robots, vision, drives and safety devices it controls">
+        <div>
+          <h3>RIC: Robotic Integrated Controller</h3>
+          <p class="case-meta">2017–2020 · OMRON Robotics</p>
+          <p>A machine automation controller, the NJ501-R, that also manages the robot
+            controllers. PLC, motion and robot control run in a single controller, so robots,
+            vision, drives and safety equipment are synchronised in real time, and the PLC
+            and the robots are programmed in the same IEC language from Sysmac Studio, which
+            can also emulate the whole system without the real machine. OMRON presented it
+            in 2020 as the world's first robotic integrated controller.</p>
+          <p class="case-links"><a href="https://industrial.omron.eu/en/news-discover/news/omron-announces-the-world-s-first-robotic-integrated-controller">OMRON announcement (2020)</a></p>
+        </div>
+      </article>
+
+      <article class="case" id="sysmac-library-adept">
+        <img src="sysmaclib-oat.png" alt="Robot and its controller connected over EtherNet/IP to an NJ/NX/NY controller programmed from Sysmac Studio">
+        <div>
+          <h3>Sysmac Library for Adept Robots</h3>
+          <p class="case-meta">2016 · OMRON Industrial Automation</p>
+          <p>A library of function blocks to control Adept robots (SCARA, delta and
+            articulated) from an NJ/NX machine controller over EtherNet/IP, with common
+            instructions for all robot types. Version 2.0 added arc and circular moves
+            and conveyor tracking.</p>
+          <p>I designed the architecture of the library and defined the coding rules for
+            Structured Text, applying an object-oriented style built on functions. I also
+            wrote a simple unit-testing framework in Structured Text, and took part in the
+            system tests.</p>
+          <p class="case-links"><a href="https://files.omron.eu/downloads/latest/brochure/en/p106_sysmac-xr009_adept_robot_control_library_brochure_en.pdf?v=1">OMRON brochure (SYSMAC-XR009)</a></p>
+        </div>
+      </article>
+
       <article class="case" id="nj-robotics">
-        <img src="portfolio/16-1.jpg" alt="Delta-3 robot">
+        <img src="nj-robotics.png" alt="OMRON NJ controller driving delta robots that pick products from a conveyor">
         <div>
           <h3>NJ-Robotics: robot functions in a machine controller</h3>
           <p class="case-meta">2010–2014 · OMRON Industrial Automation</p>
           <p>Adding robot functionality for the packaging industry to NJ, a controller
             that combines a PLC engine and a motion control engine. It covers Cartesian
             XYZ, SCARA, delta-2 and delta-3 robots, and synchronising a robot with a conveyor.</p>
-          <p>The robots (kinematics, workspace, trajectories) were analysed and simulated
-            in Scilab, then prototyped on a TrajeXia controller with a Codian robot. The
-            functions were later integrated into NJ as a new robot control subsystem,
-            written in ANSI C99 on QNX.</p>
-          <p class="case-links"><a href="blog/2011/09/16/kinematics-delta-3-robot.html">Delta-3 kinematics</a> · <a href="blog/2012/06/02/kinematics-delta-2-robot.html">Delta-2 kinematics</a></p>
+          <p>I worked on all the robot functionality and on the prototype. The robots
+            (kinematics, workspace, trajectories) were analysed and simulated in Scilab,
+            then prototyped with a Codian robot. The functions were later integrated into
+            NJ as a new robot control subsystem, written in ANSI C99 on QNX. I designed
+            this subsystem, the Robot Controller Module (RCM), which is the robot
+            controller inside the Motion Control Engine (MCE).</p>
+          <p class="case-links"><a href="../blog/2011/09/16/kinematics-delta-3-robot.html">Delta-3 kinematics</a> · <a href="../blog/2012/06/02/kinematics-delta-2-robot.html">Delta-2 kinematics</a></p>
         </div>
       </article>
 
       <article class="case" id="trajexia">
-        <img src="portfolio/14-1.jpg" alt="OMRON Trajexia motion controller">
+        <img src="trajexia.jpg" alt="OMRON Trajexia motion controller">
         <div>
           <h3>Robotics package for TrajeXia</h3>
           <p class="case-meta">2010–2011 · OMRON Industrial Automation</p>
           <p>Extra functions for TrajeXia, a stand-alone motion controller over EtherCAT:
             delta-3 kinematics and workspace, coordinate system management and conveyor
             tracking. The firmware belongs to <a href="https://www.triomotion.com/">Trio Motion</a>, who implemented the functions.
-            My part was reviewing requirements, giving robotics support to their
-            developers and running the acceptance tests.</p>
+            My part was reviewing the requirements, helping their developers with the
+            robotics behind the algorithms, and running the acceptance tests.</p>
         </div>
       </article>
 
       <article class="case" id="mce">
-        <img src="portfolio/13-1.jpg" alt="OMRON NJ controller">
+        <img src="mce.jpg" alt="OMRON NJ controller">
         <div>
           <h3>Motion Control Engine of NJ</h3>
           <p class="case-meta">2009 · OMRON Industrial Automation</p>
@@ -91,7 +125,7 @@
       </article>
 
       <article class="case" id="movirobotics">
-        <img src="portfolio/12-2.jpg" alt="Prototypes of the MoviRobotics security robot">
+        <img src="movirobotics.jpg" alt="Prototypes of the MoviRobotics security robot">
         <div>
           <h3>Security mobile robot</h3>
           <p class="case-meta">2008 · MoviRobotics</p>
@@ -102,7 +136,7 @@
 
       <article class="case" id="vrs">
         <figure class="case-figure">
-          <img src="portfolio/11-4.jpg" alt="Robotic work cell simulated in Virtual Robot Simulator">
+          <img src="vrs.jpg" alt="Robotic work cell simulated in Virtual Robot Simulator">
           <figcaption>Screenshot of Virtual Robot Simulator, not of the GUI component.</figcaption>
         </figure>
         <div>
@@ -117,7 +151,7 @@
       </article>
 
       <article class="case" id="robstar">
-        <img src="portfolio/11-2.jpg" alt="Robstar with a container on its transport pad">
+        <img src="robstar.jpg" alt="Robstar with a container on its transport pad">
         <div>
           <h3>Robstar: a robot for nuclear storage areas</h3>
           <p class="case-meta">2007–2008 · RIALTO Lab., European Commission, Joint Research Centre</p>
@@ -137,7 +171,7 @@
       </article>
 
       <article class="case" id="radardem">
-        <img src="portfolio/09-3.png" alt="RadarDEM 3D viewer window">
+        <img src="radardem.png" alt="RadarDEM 3D viewer window">
         <div>
           <h3>RadarDEM: a 3D viewer for avalanche monitoring</h3>
           <p class="case-meta">2006 · European Commission, Joint Research Centre</p>
@@ -146,13 +180,14 @@
             in the mountain. It overlays the radar image on an orthophoto mounted over a
             Digital Elevation Model, which can be rotated, panned and zoomed in 3D.</p>
           <p>Each scene covers about 2 km × 2 km, close to one million points with several
-            colour-coded layers of information. It was written in C++ with OpenGL to handle
-            them efficiently, as a joint work of the SERAC sector and the NUSAF unit of the JRC.</p>
+            colour-coded layers of information. I developed the whole application, in C++
+            with OpenGL to handle them efficiently. The project was a joint work of the
+            SERAC sector and the NUSAF unit of the JRC.</p>
         </div>
       </article>
 
       <article class="case" id="agents">
-        <img src="portfolio/09-2.png" alt="Community of software agents for event detection in images">
+        <img src="agents.png" alt="Community of software agents for event detection in images">
         <div>
           <h3>Detection of nuclear material with software agents</h3>
           <p class="case-meta">2004–2006 · NUSAF, European Commission, Joint Research Centre</p>
@@ -167,7 +202,7 @@
       </article>
 
       <article class="case" id="alis">
-        <img src="portfolio/09-1.png" alt="ALIS surveillance unit">
+        <img src="alis.png" alt="ALIS surveillance unit">
         <div>
           <h3>ALIS integration and Event Viewer</h3>
           <p class="case-meta">2004–2006 · NUSAF, European Commission, Joint Research Centre</p>
@@ -180,7 +215,7 @@
       </article>
 
       <article class="case" id="acdlib">
-        <img src="portfolio/08-1.png" alt="Collision detection with spherical volumes">
+        <img src="acdlib.png" alt="Collision detection with spherical volumes">
         <div>
           <h3>acdLib: a collision detection library</h3>
           <p class="case-meta">2003</p>
@@ -192,7 +227,7 @@
       </article>
 
       <article class="case" id="follower">
-        <img src="portfolio/07-1.png" alt="Follower and leader mobile robots simulated in VRS">
+        <img src="follower.png" alt="Follower and leader mobile robots simulated in VRS">
         <div>
           <h3>Hybrid control architecture for a differential robot</h3>
           <p class="case-meta">2003</p>
@@ -204,7 +239,7 @@
       </article>
 
       <article class="case" id="trencadis">
-        <img src="portfolio/05-1.png" alt="Robotic cell for Trencadís mosaics">
+        <img src="trencadis.png" alt="Robotic cell for Trencadís mosaics">
         <div>
           <h3>Robotic cell for Trencadís mosaics</h3>
           <p class="case-meta">2002–2004 · DISA, Universitat Politècnica de València and Trencadís Innovación</p>
@@ -212,26 +247,31 @@
             and a computer. The vision system locates the tiles arriving on one belt and
             recognises their shape once the robot has picked them up; the robot then places
             them on the other belt.</p>
+          <p>I worked on the vision algorithms, the interaction with the robot and the
+            software that manages the production cell, including the definition of its
+            architecture.</p>
           <p class="case-links"><a href="https://www.researchgate.net/publication/229151042_Intelligent_robotic_cell_for_Trencadspl_inodotspl_acutes_mosaics_manufacturing">Article in IEEE Trans. on SMC, Part C (2005)</a></p>
         </div>
       </article>
 
       <article class="case" id="cardboard">
-        <img src="portfolio/03-1.jpg" alt="Cardboard aligner with visual feedback">
+        <img src="cardboard.jpg" alt="Cardboard aligner with visual feedback">
         <div>
           <h3>Cardboard cutter with visual feedback</h3>
           <p class="case-meta">2002–2003 · DISA, Universitat Politècnica de València and Smurfit</p>
           <p>A control system for the cutting stage of a machine that makes cardboard
             boxes. A 2D vision system measures the displacement of a reference point in the
             image and feeds it back to correct the cutter.</p>
+          <p>I worked on the vision algorithms and developed the application that
+            interacted with the cutting machine to correct the position of the cardboard.</p>
         </div>
       </article>
 
       <article class="case" id="distributed-vision">
-        <img src="portfolio/04-1.jpg" alt="CRS robot arm">
+        <img src="distributed-vision.jpg" alt="CRS robot arm">
         <div>
-          <h3>Distributed 3D vision system</h3>
-          <p class="case-meta">2002 · Final degree project, Universitat Politècnica de València</p>
+          <h3>MEng project: a distributed 3D vision system</h3>
+          <p class="case-meta">2002 · Universitat Politècnica de València</p>
           <p>A vision system split with CORBA into acquisition, processing, classification
             and visualisation, each able to run on a different PC. It locates an object by
             category and returns its Cartesian position, using Tsai camera calibration and
@@ -242,7 +282,7 @@
 
       <article class="case" id="container-help">
         <figure class="case-figure">
-          <img src="portfolio/02-1.jpg" alt="Spreader of a container crane lifting a container">
+          <img src="container-help.jpg" alt="Spreader of a container crane lifting a container">
           <figcaption>Illustrative photo, resized: <a href="https://commons.wikimedia.org/wiki/File:Heavy_duty_high_draulic_twin_lift_spreader.png">Joe.Sa1998</a>, <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></figcaption>
         </figure>
         <div>
@@ -252,6 +292,7 @@
             holes of 20 × 20 cm on each container. This 3D vision system shows them where
             the holes are, through image acquisition, camera calibration, image processing
             and 3D modelling.</p>
+          <p>I took part in all the development phases of the application.</p>
           <p class="case-links"><a href="https://skoge.folk.ntnu.no/prost/proceedings/ifac2002/data/content/02209/abstract.htm">Article at 15th IFAC World Congress (2002)</a></p>
         </div>
       </article>
@@ -261,7 +302,7 @@
   <footer>
     Unless otherwise noted, content is licensed under
     <a href="https://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.
-    · <a href="feed.xml">RSS</a>
+    · <a href="../feed.xml">RSS</a>
   </footer>
 </body>
 </html>

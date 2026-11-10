@@ -5,7 +5,7 @@
 ```
 .
 ├── index.html            Home: Portfolio slideshow + projects (left), Lifestream (right)
-├── projects.html         Projects: description of each project
+├── projects/             Projects: index.html (one section per project) and its images
 ├── about-me.html         About me
 ├── style.css             Styles for the whole site
 ├── images/               Logo and About me photo
@@ -27,7 +27,7 @@
 
 | Part | Needs Jekyll? |
 |---|---|
-| `index.html`, `projects.html`, `about-me.html` | No: plain HTML, you can open them directly in a browser |
+| `index.html`, `projects/index.html`, `about-me.html` | No: plain HTML, you can open them directly in a browser |
 | `blog/`, the posts and the RSS feed (`feed.xml`) | Yes: opened directly they look broken (you see `{% ... %}` code) |
 
 ### Folders starting with `_`
@@ -43,7 +43,7 @@ The names are fixed: if you rename them, Jekyll stops recognising them.
 
 - **Home** (`index.html`): tagline, the Portfolio (image slideshow and project cards), and the Lifestream on the right. On screens narrower than 860 px the Lifestream moves below the Portfolio.
 - **Blog** (`blog/index.html`): all posts grouped by year, and a list by tag.
-- **Projects** (`projects.html`): one section per project, newest first. Each section has an `id` that the slideshow can link to.
+- **Projects** (`projects/index.html`): one section per project, newest first, with its images in the same folder (separate from the slideshow images in `portfolio/`). Each section has an `id` that the slideshow can link to.
 - **About me** (`about-me.html`): bio, photo and links to other profiles.
 
 Menu: Home · Projects · Blog · Twitter · LinkedIn · GitHub · About me.
@@ -92,7 +92,7 @@ and open http://localhost:4000. The site rebuilds when a file changes; just relo
 
 ## Maintenance
 
-- **Menu:** it lives in four places: `index.html`, `projects.html`, `about-me.html` and `_layouts/default.html`. If you change it, change all three.
+- **Menu:** it lives in four places: `index.html`, `projects/index.html`, `about-me.html` and `_layouts/default.html`. If you change it, change all three.
 - **Portfolio images:** they are in `portfolio/`, named `NN.ext` or `NN-M.ext` (`NN` = group, `M` = photo in the group); the slideshow shows them ordered by file name. Their captions and links are in the table of `portfolio/captions.md`. To add a photo, copy it into `portfolio/` and add a row to the table. The page reads the table when it loads, so to preview it locally you need a web server (`bundle exec jekyll serve` or `python3 -m http.server`), not the file opened directly.
 - **Portfolio projects:** loaded from GitHub when the page opens: every repo of `dgerod` with the topic `portfolio`, most starred first. To show or hide a repo, add or remove that topic on GitHub (repo page → ⚙ next to "About" → Topics). If GitHub cannot be reached or no repo has the topic, a message with a link to the GitHub repositories is shown instead.
 - **Lifestream:** uses the official X widget. It may not load for visitors who are not logged in to X, so there is a fallback link.
