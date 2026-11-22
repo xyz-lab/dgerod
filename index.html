@@ -1,3 +1,6 @@
+---
+# Front matter so Jekyll processes this page and can list the latest posts.
+---
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,9 +19,9 @@
         <li><a class="active" href="index.html">Home</a></li>
         <li><a href="projects/">Projects</a></li>
         <li><a href="blog/">Scratchpad</a></li>
+        <li><a href="https://github.com/dgerod">GitHub</a></li>
         <li><a href="https://x.com/dgerod">X / Twitter</a></li>
         <li><a href="https://www.linkedin.com/in/dgerod">LinkedIn</a></li>
-        <li><a href="https://github.com/dgerod">GitHub</a></li>
         <li><a href="about-me.html">About me</a></li>
       </ul>
     </div>
@@ -35,17 +38,30 @@
         <p class="slide-caption" aria-live="polite"></p>
         <div class="slide-nav"></div>
       </div>
-      <div class="portfolio" id="projects"></div>
-      <p class="fallback" id="projects-fallback">If the projects do not load, see my repositories at <a href="https://github.com/dgerod?tab=repositories">github.com/dgerod</a>.</p>
-      <p class="more"><a href="https://github.com/dgerod?tab=repositories">All repositories on GitHub →</a></p>
+      <div class="portfolio-grid" id="projects"></div>
+      <p class="fallback" id="projects-fallback">If the projects do not load, see them all in <a href="projects/">Projects</a>.</p>
+      <p class="more"><a href="projects/">All projects →</a></p>
+      <div class="portfolio-grid repos-grid" id="repos" hidden></div>
+      <p class="fallback" id="repos-fallback">If the repositories do not load, see them all on <a href="https://github.com/dgerod?tab=repositories">GitHub</a>.</p>
+      <p class="more" id="repos-more"><a href="https://github.com/dgerod?tab=repositories">All repositories →</a></p>
     </section>
 
     <section class="box">
-      <h2>Lifestream</h2>
-      <div class="lifestream">
-        <a class="twitter-timeline" data-height="900" data-dnt="true" href="https://twitter.com/dgerod">Tweets by @dgerod</a>
-        <p class="fallback">If the timeline does not load, see my posts at <a href="https://x.com/dgerod">x.com/dgerod</a>.</p>
-      </div>
+      <h2>Latest notes</h2>
+      {%- assign latest = site.posts | slice: 0, 5 %}
+      {%- if latest.size > 0 %}
+      <ul class="posts">
+        {%- for post in latest %}
+        <li>
+          <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+          <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+        </li>
+        {%- endfor %}
+      </ul>
+      {%- else %}
+      <p class="fallback">If the notes do not load, see them all in the <a href="blog/">Scratchpad</a>.</p>
+      {%- endif %}
+      <p class="more"><a href="blog/">All notes →</a></p>
     </section>
     </div>
   </main>
@@ -155,12 +171,18 @@
     })();
   </script>
   <script>
-    // Portfolio projects: GitHub repos of dgerod with the topic "portfolio", most starred first.
-    // If they load, the fallback message is hidden; otherwise it stays visible.
+    // Portfolio projects, shown as cards under the slideshow, in two blocks:
+    //  1. #projects: the entries of projects/index.html with the class "portfolio",
+    //     linking to their entry in the Projects page, followed by "All projects";
+    //  2. #repos: the GitHub repos of USER with the topic "portfolio", linking to the
+    //     repo. Hidden if there are none, and then its fallback message is shown;
+    //     the "All repositories" link below it is always shown.
+    // Each block is sorted alphabetically by title. Each source is optional: if one
+    // fails, the other is still shown. If the projects fail, the fallback stays visible.
     (function () {
-      var USER = "dgerod", TOPIC = "portfolio";
-      var box = document.getElementById("projects");
-      if (!box || !window.fetch) return;
+      var PAGE = "projects/", USER = "dgerod", TOPIC = "portfolio", MAX_TEXT = 170;
+      var box = document.getElementById("projects"), repoBox = document.getElementById("repos");
+      if (!box || !repoBox || !window.fetch || !window.DOMParser) return;
 
       function el(tag, cls, text) {
         var e = document.createElement(tag);
@@ -168,36 +190,70 @@
         if (text) e.textContent = text;
         return e;
       }
+      function first_sentence(text) {
+        text = text.replace(/\s+/g, " ").trim();
+        var end = text.search(/\.(\s|$)/);
+        if (end !== -1) text = text.slice(0, end + 1);
+        if (text.length > MAX_TEXT) text = text.slice(0, text.lastIndexOf(" ", MAX_TEXT)) + "…";
+        return text;
+      }
+      function card(title, href, text, meta) {
+        var c = el("article", "project"), h3 = el("h3"), a = el("a", "", title);
+        a.href = href;
+        h3.appendChild(a);
+        c.appendChild(h3);
+        c.appendChild(el("p", "", text));
+        c.appendChild(el("span", "meta", meta));
+        return c;
+      }
 
-      fetch("https://api.github.com/users/" + USER + "/repos?per_page=100&type=owner", {
+      var fromSite = fetch(PAGE)
+        .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
+        .then(function (html) {
+          var doc = new DOMParser().parseFromString(html, "text/html");
+          return Array.prototype.map.call(doc.querySelectorAll("article.case.portfolio"), function (art) {
+            var title = art.querySelector("h3"), meta = art.querySelector(".case-meta");
+            var text = art.querySelector(".case-meta ~ p:not(.case-links)");
+            return card(title ? title.textContent.trim() : art.id, PAGE + "#" + art.id,
+                        text ? first_sentence(text.textContent) : "",
+                        meta ? meta.textContent.trim() : "");
+          });
+        })
+        .catch(function () { return []; });
+
+      var fromGitHub = fetch("https://api.github.com/users/" + USER + "/repos?per_page=100&type=owner", {
         headers: { "Accept": "application/vnd.github+json" }
       })
         .then(function (r) { if (!r.ok) throw new Error(r.status); return r.json(); })
         .then(function (repos) {
-          var picked = repos
+          return repos
             .filter(function (r) { return (r.topics || []).indexOf(TOPIC) !== -1; })
-            .sort(function (a, b) { return b.stargazers_count - a.stargazers_count || a.name.localeCompare(b.name); });
-          if (!picked.length) return;
+            .map(function (r) {
+              var meta = ["GitHub", r.language, r.stargazers_count ? "★ " + r.stargazers_count : ""]
+                .filter(Boolean).join(" · ");
+              return card(r.name, r.html_url, first_sentence(r.description || ""), meta);
+            });
+        })
+        .catch(function () { return []; });
 
-          picked.forEach(function (r) {
-            var card = el("article", "project");
-            var h3 = el("h3");
-            var link = el("a", "", r.name);
-            link.href = r.html_url;
-            h3.appendChild(link);
-            card.appendChild(h3);
-            card.appendChild(el("p", "", r.description || ""));
-            var meta = [r.language, r.stargazers_count ? "★ " + r.stargazers_count : ""]
-              .filter(Boolean).join(" · ");
-            card.appendChild(el("span", "meta", meta));
-            box.appendChild(card);
-          });
+      Promise.all([fromSite, fromGitHub]).then(function (lists) {
+        function by_title(a, b) {
+          return a.querySelector("h3").textContent.localeCompare(b.querySelector("h3").textContent, "en", { sensitivity: "base" });
+        }
+        var projects = lists[0].sort(by_title), repos = lists[1].sort(by_title);
+        if (projects.length) {
+          projects.forEach(function (c) { box.appendChild(c); });
           var fb = document.getElementById("projects-fallback");
           if (fb) fb.hidden = true;
-        })
-        .catch(function () { /* leave the fallback message visible */ });
+        }
+        if (repos.length) {
+          repos.forEach(function (c) { repoBox.appendChild(c); });
+          repoBox.hidden = false;
+          var rfb = document.getElementById("repos-fallback");
+          if (rfb) rfb.hidden = true;
+        }
+      });
     })();
   </script>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </body>
 </html>

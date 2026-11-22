@@ -73,7 +73,7 @@ h2 {
 .columns .box { margin-bottom: 0; }
 @media (max-width: 760px) { .columns { grid-template-columns: 1fr; } }
 
-/* Home: portfolio (left) + lifestream (right) */
+/* Home: portfolio (left) + latest notes (right) */
 .home-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 320px;
@@ -154,7 +154,9 @@ h2 {
 .slide-nav button.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
 /* Portfolio cards */
-.portfolio { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+.portfolio-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px; }
+.repos-grid, #repos-fallback { margin-top: 28px; }
+.portfolio-grid[hidden], .more[hidden] { display: none; }
 .project {
   border: 1px solid var(--border);
   border-radius: 4px;
@@ -163,7 +165,7 @@ h2 {
   flex-direction: column;
 }
 .project h3 { margin: 0 0 6px; font-size: 17px; font-weight: 600; }
-.project p { margin: 0 0 12px; color: var(--muted); font-size: 14px; flex: 1; }
+.project p { margin: 0 0 12px; color: var(--muted); font-size: 14px; }
 .project .meta { font-size: 13px; color: var(--muted); }
 
 /* Posts */
@@ -176,8 +178,6 @@ h2 {
 .tag-filter { margin: 16px 0 0; padding: 8px 12px; background: var(--bg); border-radius: 4px; font-size: 14px; }
 .more { margin-top: 12px; font-size: 14px; }
 
-/* Lifestream */
-.lifestream { max-height: 900px; overflow-y: auto; }
 .fallback { color: var(--muted); font-size: 14px; }
 
 /* About */
