@@ -48,6 +48,48 @@
         </div>
       </article>
 
+      <article class="case no-image" id="next-gen-fixed-robots">
+        <div>
+          <h3>Next-generation platform for fixed robots</h3>
+          <p class="case-meta">2024–present · OMRON Robotics</p>
+          <p>A new platform for OMRON's fixed industrial robots, in development: the
+            programming software, the robot controller and the teach pendant, designed
+            together as one system.</p>
+          <p>As co-technical director of the Fixed Robot Software Engineering department,
+            I define the system architecture and the technology of the three products, and
+            oversee how they are built: specifications, a V-model development process,
+            software testing, traceability, and functional safety and cybersecurity
+            towards TÜV certification, to comply with the EU Machinery Regulation and the
+            Cyber Resilience Act (CRA).</p>
+          <p>Part of its groundwork comes from a technology project I worked on in 2021: a
+            high-level safety architecture for a new robot controller platform, with its
+            interfaces, safety functions and constraints. That knowledge was later applied
+            to this platform.</p>
+        </div>
+      </article>
+
+      <article class="case" id="src">
+        <figure class="case-figure">
+          <img src="src.jpg" alt="OMRON i4L SCARA robot next to a controller connected to it over EtherCAT">
+          <figcaption>Image: <a href="https://industrial.omron.eu/en/news-events/news/omron-adds-ethercat-models-to-i4l-scara-robot-series">OMRON</a></figcaption>
+        </figure>
+        <div>
+          <h3>Standalone Robot Controller</h3>
+          <p class="case-meta">2021–2023 · OMRON Robotics</p>
+          <p>The software of a stand-alone controller for OMRON's fixed robots, the
+            counterpart of the RIC for robots that are not driven from a machine
+            controller. It controls the i4L and i4H SCARA robots, the other fixed robots
+            and the Viper six-axis robots, using the same robot control software as the
+            RIC. It was developed together with other OMRON Robotics
+            groups, in
+            steps: first the base controller software, then support for industrial
+            fieldbuses, adding PROFINET and, after it, EtherCAT.</p>
+          <p>I led the system architecture and the technology of the controller software,
+            and worked on the system and software design, the design reviews and the
+            traceability between them.</p>
+        </div>
+      </article>
+
       <article class="case" id="ric">
         <figure class="case-figure">
           <img src="ric.jpg" alt="OMRON NJ501-R controller surrounded by the delta, SCARA and articulated robots, vision, drives and safety devices it controls">
@@ -62,7 +104,20 @@
             and the robots are programmed in the same IEC language from Sysmac Studio, which
             can also emulate the whole system without the real machine. OMRON presented it
             in 2020 as the world's first robotic integrated controller.</p>
-          <p class="case-links"><a href="https://industrial.omron.eu/en/news-discover/news/omron-announces-the-world-s-first-robotic-integrated-controller">OMRON announcement (2020)</a></p>
+          <p>My part started in 2016, after OMRON acquired Adept, on several trips to its
+            site in Pleasanton, California,
+            where I took part in the technical meetings and technical decisions on the
+            controller with Adept's engineers in the US and CBU's engineers in Japan. From 2017 my team took part in its
+            specification and development. In 2018 I proposed moving its servo and
+            control components from Nucleus to QNX, convinced the people involved that it
+            was the right step, and led the port that same year, including the architecture
+            and real-time analysis of boot, threads, FPGA, interrupts and memory.</p>
+          <p>Inside the RIC, the robot control software is NEVP, a new software base for
+            eV+, the language and control software of OMRON's fixed robots. I led its
+            vision and architecture, owned its technology roadmap and developed motion
+            planning and control algorithms. Part of this work led to patents on
+            multi-robot and distributed robot control.</p>
+          <p class="case-links"><a href="https://industrial.omron.eu/en/news-discover/news/omron-announces-the-world-s-first-robotic-integrated-controller">OMRON announcement (2020)</a> · <a href="https://patents.google.com/patent/EP4119305A1/en">Multi-robot controller (EP4119305A1)</a> · <a href="https://patents.google.com/patent/EP4119306A1/en">Distributed control system (EP4119306A1)</a> · <a href="https://patents.google.com/patent/JP2023111378A/en">Arrangement of control modules (JP2023111378A)</a> · <a href="https://patents.google.com/patent/JP2023111376A/en">Adapting to computational resources (JP2023111376A)</a></p>
         </div>
       </article>
 
@@ -103,7 +158,11 @@
             NJ as a new robot control subsystem, written in ANSI C99 on QNX. I designed
             this subsystem, the Robot Control Module (RCM), which is the robot
             controller inside the Motion Control Engine (MCE).</p>
-          <p class="case-links"><a href="../blog/2011/09/16/kinematics-delta-3-robot.html">Delta-3 kinematics</a> · <a href="../blog/2012/06/02/kinematics-delta-2-robot.html">Delta-2 kinematics</a></p>
+          <p>Before NJ-Robotics I researched conveyor tracking: following parts on a
+            moving conveyor, planning the trajectory and correcting the robot's motion on
+            the fly, which led to a patent. Later I worked on dynamics algorithms for
+            delta-3 and SCARA robots.</p>
+          <p class="case-links"><a href="../blog/2011/09/16/kinematics-delta-3-robot.html">Delta-3 kinematics</a> · <a href="../blog/2012/06/02/kinematics-delta-2-robot.html">Delta-2 kinematics</a> · <a href="https://patents.google.com/patent/EP2902862A1/en">Conveyor tracking offset (EP2902862A1)</a> · <a href="https://patents.google.com/patent/EP3369532A1/en">SCARA workspace with forbidden zones (EP3369532A1)</a> · <a href="https://patents.google.com/patent/EP3369533B1/en">SCARA cable protection (EP3369533B1)</a></p>
         </div>
       </article>
 
