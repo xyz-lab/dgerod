@@ -28,8 +28,7 @@
 
 | Part | Needs Jekyll? |
 |---|---|
-| `projects/index.html`, `about-me.html` | No: plain HTML, you can open them directly in a browser |
-| `index.html` | Yes: Jekyll fills in the latest notes; opened directly you see `{% ... %}` code |
+| `index.html`, `projects/index.html`, `about-me.html` | Yes: they are HTML, but Jekyll fills in the version of the style sheet (and, in `index.html`, the latest notes). Opened directly, the styles do not load |
 | `blog/`, the posts and the RSS feed (`feed.xml`) | Yes: opened directly they look broken (you see `{% ... %}` code) |
 
 ### Folders starting with `_`
@@ -94,6 +93,7 @@ and open http://localhost:4000. The site rebuilds when a file changes; just relo
 
 ## Maintenance
 
+- **Style sheet version:** every page links `style.css?v=…`, where the number is the time the site was built. Each publication changes it, so browsers download the new `style.css` instead of using a cached copy (GitHub Pages lets them keep it for 10 minutes).
 - **Menu:** it lives in four places: `index.html`, `projects/index.html`, `about-me.html` and `_layouts/default.html`. If you change it, change all four.
 - **Portfolio images:** they are in `portfolio/`, named `NN.ext` or `NN-M.ext` (`NN` = group, `M` = photo in the group); the slideshow shows them ordered by file name. Their captions and links are in the table of `portfolio/captions.md`. To add a photo, copy it into `portfolio/` and add a row to the table. The page reads the table when it loads, so to preview it locally you need a web server (`bundle exec jekyll serve` or `python3 -m http.server`), not the file opened directly.
 - **Portfolio projects:** the cards under the slideshow come from two places, both marked with `portfolio`: the projects of `projects/index.html` and the GitHub repositories. See [Choosing the portfolio projects](#choosing-the-portfolio-projects).
