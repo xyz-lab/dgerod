@@ -34,16 +34,17 @@
           <h3>PhD thesis: the anchoring problem in robotic kitting</h3>
           <p class="case-meta">2025 · Universitat Politècnica de Catalunya</p>
           <p>“Dealing with the Anchoring Problem in Robotic Kitting using Behavior Trees”,
-            supervised by René Alquézar and Joan Aranda. Kitting means picking different
+            supervised by René Alquézar and Joan Aranda at the <a href="https://www.upc.edu/">UPC</a>. Kitting means picking different
             parts from containers and grouping them into kits for a flexible machine. To
             cope with new parts and tasks, a robot has to link its symbolic actions, such as
             find-part, to low-level instructions, such as move-arm-to.</p>
           <p>I proposed GP-CBT, an algorithm that combines genetic programming with
             conditional behavior trees to learn those links automatically, under the
             supervision of an operator who can add task requirements. Knowledge from tasks
-            already learned speeds up new ones. The behavior trees were learned on an
-            environment based on ARIAC 2018 and then executed on two real Omron robots,
-            the i4L-350 and the TM5-900, showing that they can be transferred between robots.</p>
+            already learned speeds up new ones.</p>
+          <p>The behavior trees were learned in an environment based on ARIAC 2018 and then
+            run on two real Omron robots, the i4L-350 and the TM5-900, showing that they can
+            be transferred between robots.</p>
           <p class="case-links"><a href="https://doi.org/10.5821/dissertation-2117-449775">PhD thesis</a> · <a href="https://link.springer.com/article/10.1007/s10489-025-06373-w">Article in Applied Intelligence, vol. 55, Springer (2025)</a></p>
         </div>
       </article>
@@ -51,42 +52,38 @@
       <article class="case no-image" id="next-gen-fixed-robots">
         <div>
           <h3>Next-generation platform for fixed robots</h3>
-          <p class="case-meta">2024–present · OMRON Robotics</p>
-          <p>A new platform for OMRON's fixed industrial robots, in development: the
+          <p class="case-meta">2024–present · OMRON Robotics (ORT)</p>
+          <p>A new platform for ORT's fixed industrial robots, in development: the
             programming software, the robot controller and the teach pendant, designed
             together as one system.</p>
-          <p>As co-technical director of the Fixed Robot Software Engineering department,
-            I define the system architecture and the technology of the three products, and
-            oversee how they are built: specifications, a V-model development process,
-            software testing, traceability, and functional safety and cybersecurity
-            towards TÜV certification, to comply with the EU Machinery Regulation and the
-            Cyber Resilience Act (CRA).</p>
-          <p>Part of its groundwork comes from a technology project I worked on in 2021: a
-            high-level safety architecture for a new robot controller platform, with its
-            interfaces, safety functions and constraints. That knowledge was later applied
-            to this platform.</p>
+          <p>As co-technical director of the Fixed Robot Software Engineering department, I
+            define the system architecture and the technology of the three products, and
+            oversee how they are built, from specifications and a V-model development
+            process to software testing and traceability.</p>
+          <p>Functional safety and cybersecurity are built in from the start, to comply with the EU Machinery Regulation and the Cyber
+            Resilience Act (CRA). Part of that groundwork comes from a technology project I
+            worked on in 2021: a high-level safety architecture for a new robot controller
+            platform.</p>
         </div>
       </article>
 
       <article class="case" id="src">
         <figure class="case-figure">
-          <img src="src.jpg" alt="OMRON i4L SCARA robot next to a controller connected to it over EtherCAT">
-          <figcaption>Image: <a href="https://industrial.omron.eu/en/news-events/news/omron-adds-ethercat-models-to-i4l-scara-robot-series">OMRON</a></figcaption>
+          <img src="src.jpg" alt="Several OMRON Viper six-axis robots working in a packaging line">
+          <figcaption>Image: <a href="https://robotics.omron.com/products/industrial-robots/articulated/viper/">OMRON</a></figcaption>
         </figure>
         <div>
           <h3>Standalone Robot Controller</h3>
-          <p class="case-meta">2021–2023 · OMRON Robotics</p>
-          <p>The software of a stand-alone controller for OMRON's fixed robots, the
-            counterpart of the RIC for robots that are not driven from a machine
-            controller. It controls the i4L and i4H SCARA robots, the other fixed robots
-            and the Viper six-axis robots, using the same robot control software as the
-            RIC. It was developed together with other OMRON Robotics
-            groups, in
-            steps: first the base controller software, then support for industrial
-            fieldbuses, adding PROFINET and, after it, EtherCAT.</p>
-          <p>I led the system architecture and the technology of the controller software,
-            and worked on the system and software design, the design reviews and the
+          <p class="case-meta">2021–2023 · OMRON Robotics (ORT)</p>
+          <p>The software of a stand-alone controller for ORT's fixed robots: the i4L and
+            i4H SCARA robots, the Viper six-axis robots and the rest of the range. It is the
+            counterpart of the RIC for robots that are not driven from a machine controller,
+            and uses the same robot control software.</p>
+          <p>I led the system architecture and the technology of the controller software, and
+            worked on the system and software design, the design reviews and the
             traceability between them.</p>
+          <p>It was built in steps, together with other ORT groups: first the base
+            controller software, then the PROFINET fieldbus and, after it, EtherCAT.</p>
         </div>
       </article>
 
@@ -97,26 +94,21 @@
         </figure>
         <div>
           <h3>RIC: Robotic Integrated Controller</h3>
-          <p class="case-meta">2017–2020 · OMRON Robotics</p>
-          <p>A machine automation controller, the NJ501-R, that also manages the robot
-            controllers. PLC, motion and robot control run in a single controller, so robots,
-            vision, drives and safety equipment are synchronised in real time, and the PLC
-            and the robots are programmed in the same IEC language from Sysmac Studio, which
-            can also emulate the whole system without the real machine. OMRON presented it
-            in 2020 as the world's first robotic integrated controller.</p>
-          <p>My part started in 2016, after OMRON acquired Adept, on several trips to its
-            site in Pleasanton, California,
-            where I took part in the technical meetings and technical decisions on the
-            controller with Adept's engineers in the US and CBU's engineers in Japan. From 2017 my team took part in its
-            specification and development. In 2018 I proposed moving its servo and
-            control components from Nucleus to QNX, convinced the people involved that it
-            was the right step, and led the port that same year.</p>
-          <p>Inside the RIC, the robot control software is NEVP, a new software base for
-            eV+, the language and control software of OMRON's fixed robots. I led its
-            vision and architecture, owned its technology roadmap and developed motion
-            planning and control algorithms. Part of this work led to patents on
-            multi-robot and distributed robot control.</p>
-          <p class="case-links"><a href="https://industrial.omron.eu/en/news-discover/news/omron-announces-the-world-s-first-robotic-integrated-controller">OMRON announcement (2020)</a> · <a href="https://patents.google.com/patent/EP4119305A1/en">Multi-robot controller (EP4119305A1)</a> · <a href="https://patents.google.com/patent/EP4119306A1/en">Distributed control system (EP4119306A1)</a> · <a href="https://patents.google.com/patent/JP2023111378A/en">Arrangement of control modules (JP2023111378A)</a> · <a href="https://patents.google.com/patent/JP2023111376A/en">Adapting to computational resources (JP2023111376A)</a></p>
+          <p class="case-meta">2016–2020 · OMRON Robotics (ORT)</p>
+          <p>A machine automation controller, the NJ501-R, that runs PLC, motion and robot
+            control in a single controller, so robots, vision, drives and safety equipment
+            are synchronised in real time and programmed in the same IEC language from
+            Sysmac Studio. OMRON launched it in 2020 as the world's first robotic integrated
+            controller.</p>
+          <p>I led the vision and architecture of its robot control software, NEVP, a new
+            base for eV+, the language and control software of ORT's fixed robots, and
+            developed motion planning and control algorithms for it. Part of this work led
+            to four patents.</p>
+          <p>Before that, in 2016, I took part in the technical decisions that shaped the
+            controller, in meetings with Adept in the US and CBU in Japan. In 2018 I
+            proposed moving its servo and control components from Nucleus to QNX,
+            convinced the people involved, and led the port.</p>
+          <p class="case-links"><a href="https://industrial.omron.eu/en/news-discover/news/omron-announces-the-world-s-first-robotic-integrated-controller">OMRON announcement (2020)</a> · Patents: <a href="https://patents.google.com/patent/EP4119305A1/en">EP4119305A1</a> · <a href="https://patents.google.com/patent/EP4119306A1/en">EP4119306A1</a> · <a href="https://patents.google.com/patent/JP2023111378A/en">JP2023111378A</a> · <a href="https://patents.google.com/patent/JP2023111376A/en">JP2023111376A</a></p>
         </div>
       </article>
 
@@ -130,12 +122,12 @@
           <p class="case-meta">2016 · OMRON Industrial Automation</p>
           <p>A library of function blocks to control Adept robots (SCARA, delta and
             articulated) from an NJ/NX machine controller over EtherNet/IP, with common
-            instructions for all robot types. Version 2.0 added arc and circular moves
-            and conveyor tracking.</p>
+            instructions for all robot types.</p>
           <p>I designed the architecture of the library and defined the coding rules for
             Structured Text, applying an object-oriented style built on functions. I also
-            wrote a simple unit-testing framework in Structured Text, and took part in the
-            system tests.</p>
+            wrote a simple unit-testing framework in Structured Text.</p>
+          <p>I took part in the system tests. Version 2.0 added arc and circular moves and
+            conveyor tracking.</p>
           <p class="case-links"><a href="https://files.omron.eu/downloads/latest/brochure/en/p106_sysmac-xr009_adept_robot_control_library_brochure_en.pdf?v=1">OMRON brochure (SYSMAC-XR009)</a></p>
         </div>
       </article>
@@ -148,20 +140,19 @@
         <div>
           <h3>NJ-Robotics: robot functions in a machine controller</h3>
           <p class="case-meta">2010–2016 · OMRON Industrial Automation</p>
-          <p>Adding robot functionality for the packaging industry to NJ, a controller
-            that combines a PLC engine and a motion control engine. It covers Cartesian
-            XYZ, SCARA, delta-2 and delta-3 robots, and synchronising a robot with a conveyor.</p>
-          <p>I worked on all the robot functionality and on the prototype. The robots
-            (kinematics, workspace, trajectories) were analysed and simulated in Scilab,
-            then prototyped with a Codian robot. The functions were later integrated into
-            NJ as a new robot control subsystem, written in ANSI C99 on QNX. I designed
-            this subsystem, the Robot Control Module (RCM), which is the robot
-            controller inside the Motion Control Engine (MCE).</p>
-          <p>Before NJ-Robotics I researched conveyor tracking: following parts on a
-            moving conveyor, planning the trajectory and correcting the robot's motion on
-            the fly, which led to a patent. Later I worked on dynamics algorithms for
-            delta-3 and SCARA robots.</p>
-          <p class="case-links"><a href="../blog/2011/09/16/kinematics-delta-3-robot.html">Delta-3 kinematics</a> · <a href="../blog/2012/06/02/kinematics-delta-2-robot.html">Delta-2 kinematics</a> · <a href="https://patents.google.com/patent/EP2902862A1/en">Conveyor tracking offset (EP2902862A1)</a> · <a href="https://patents.google.com/patent/EP3369532A1/en">SCARA workspace with forbidden zones (EP3369532A1)</a> · <a href="https://patents.google.com/patent/EP3369533B1/en">SCARA cable protection (EP3369533B1)</a></p>
+          <p>Robot functionality for the packaging industry in NJ, a controller that combines
+            a PLC engine and a motion control engine. It covers Cartesian XYZ, SCARA,
+            delta-2 and delta-3 robots, and synchronising a robot with a conveyor.</p>
+          <p>I worked on all the robot functionality and designed the robot control
+            subsystem, the Robot Control Module (RCM), which is the robot controller inside
+            the Motion Control Engine (MCE). The robots (kinematics, workspace,
+            trajectories) were analysed and simulated in Scilab, prototyped with a Codian
+            robot, and then written in ANSI C99 on QNX.</p>
+          <p>Before NJ-Robotics I researched conveyor tracking: following parts on a moving
+            conveyor and correcting the robot's motion on the fly. Later I worked on
+            dynamics algorithms for delta-3 and SCARA robots. Part of this work led to three
+            patents.</p>
+          <p class="case-links"><a href="../blog/2011/09/16/kinematics-delta-3-robot.html">Delta-3 kinematics</a> · <a href="../blog/2012/06/02/kinematics-delta-2-robot.html">Delta-2 kinematics</a> · Patents: <a href="https://patents.google.com/patent/EP2902862A1/en">EP2902862A1</a> · <a href="https://patents.google.com/patent/EP3369532A1/en">EP3369532A1</a> · <a href="https://patents.google.com/patent/EP3369533B1/en">EP3369533B1</a></p>
         </div>
       </article>
 
@@ -175,9 +166,10 @@
           <p class="case-meta">2010–2011 · OMRON Industrial Automation</p>
           <p>Extra functions for TrajeXia, a stand-alone motion controller over EtherCAT:
             delta-3 kinematics and workspace, coordinate system management and conveyor
-            tracking. The firmware belongs to <a href="https://www.triomotion.com/">Trio Motion</a>, who implemented the functions.
-            My part was reviewing the requirements, helping their developers with the
-            robotics behind the algorithms, and running the acceptance tests.</p>
+            tracking. The firmware belongs to <a href="https://www.triomotion.com/">Trio
+            Motion</a>, who implemented the functions.</p>
+          <p>I reviewed the requirements, helped their developers with the robotics behind
+            the algorithms, and ran the acceptance tests.</p>
         </div>
       </article>
 
@@ -189,11 +181,11 @@
         <div>
           <h3>Motion Control Engine of NJ</h3>
           <p class="case-meta">2009 · OMRON Industrial Automation</p>
-          <p>Motion profile generation for all the axes of a machine, compliant with
-            PLCopen: single-axis moves in position, velocity and torque, synchronised axes,
-            and groups of axes such as Cartesian trajectories. I worked on the analysis and
-            simulation of the algorithms in Octave and Maxima, and on a prototype of the
-            engine in ANSI C99.</p>
+          <p>Motion profile generation for all the axes of a machine, compliant with PLCopen:
+            single-axis moves in position, velocity and torque, synchronised axes, and
+            groups of axes such as Cartesian trajectories.</p>
+          <p>I analysed and simulated the algorithms in Octave and Maxima, and worked on a
+            prototype of the engine in ANSI C99.</p>
         </div>
       </article>
 
@@ -202,8 +194,8 @@
         <div>
           <h3>Security mobile robot</h3>
           <p class="case-meta">2008 · MoviRobotics</p>
-          <p>Development of an autonomous ground vehicle for the security and homeland
-            security sectors.</p>
+          <p>An autonomous ground vehicle for the security and homeland security sectors.</p>
+          <p>I worked on its development as a robotics engineer.</p>
         </div>
       </article>
 
@@ -216,10 +208,11 @@
           <h3>Virtual Robot Simulator as a GUI component</h3>
           <p class="case-meta">2007–2008 · RIALTO Lab., European Commission, Joint Research Centre</p>
           <p>Virtual Robot Simulator (VRS), from the Robotics Group of the UPV, simulates
-            industrial robots and multi-robot cells. I turned it
-            into a graphic component that other applications can embed as a robot viewer,
-            which was used in the Robstar control application. That meant separating simulation from graphics
-            in its core and simplifying its client communication library.</p>
+            industrial robots and multi-robot cells.</p>
+          <p>I turned it into a graphic component that other applications can embed as a
+            robot viewer. That meant separating simulation from graphics in its core and
+            simplifying its client communication library.</p>
+          <p>The component was used as the robot viewer of the Robstar control application.</p>
         </div>
       </article>
 
@@ -233,15 +226,13 @@
           <p class="case-meta">2007–2008 · RIALTO Lab., European Commission, Joint Research Centre</p>
           <p>A mobile manipulator for inventory and handling tasks in a storage area for
             nuclear material: a lightweight 6-DOF SCARA-type arm on a differential vehicle,
-            with a transport pad for one PuO<sub>2</sub> container.</p>
-          <p>The vehicle carries bumpers, an inertial system and two lasers for navigation
-            and safety. The arm has a force/torque sensor and a CCD camera with a vision
-            system. A single embedded computer runs both, using GENERIS, the JRC's
-            multi-robot control software on VxWorks.</p>
+            with a transport pad for one PuO<sub>2</sub> container, lasers and bumpers for
+            navigation and safety, and a force/torque sensor and camera on the arm. A single
+            embedded computer runs it with GENERIS, the JRC's multi-robot control software
+            on VxWorks.</p>
           <p>I adapted GENERIS to work with mobile robots and developed griXL, a high-level
-            library on top of GRI, the GENERIS remote interface. Both were applied in
-            Robstar. I also worked at system level, integrating the robot controller with
-            the vision system.</p>
+            library on top of GRI, the GENERIS remote interface. I also worked at system level, integrating the robot controller with the vision
+            system.</p>
           <p class="case-links"><a href="https://www.emerald.com/ir/article-abstract/26/1/26/184043/GENERIS-the-EC-JRC-generalised-software-control">About GENERIS: article by E. Ruiz Morales in Industrial Robot (1999)</a></p>
         </div>
       </article>
@@ -251,14 +242,14 @@
         <div>
           <h3>RadarDEM: a 3D viewer for avalanche monitoring</h3>
           <p class="case-meta">2006 · European Commission, Joint Research Centre</p>
-          <p>A viewer used to assess the avalanche paths extracted from radar images in the
-            AMTRALA project, by checking that an avalanche moves through natural corridors
+          <p>A 3D viewer used in the AMTRALA project to assess the avalanche paths extracted
+            from radar images, by checking that an avalanche moves through natural corridors
             in the mountain. It overlays the radar image on an orthophoto mounted over a
-            Digital Elevation Model, which can be rotated, panned and zoomed in 3D.</p>
-          <p>Each scene covers about 2 km × 2 km, close to one million points with several
-            colour-coded layers of information. I developed the whole application, in C++
-            with OpenGL to handle them efficiently. The project was a joint work of the
-            SERAC sector and the NUSAF unit of the JRC.</p>
+            Digital Elevation Model, which can be rotated, panned and zoomed.</p>
+          <p>I developed the whole application in C++ with OpenGL, to handle scenes of about
+            2 km × 2 km with close to one million points and several colour-coded layers of
+            information.</p>
+          <p>The project was a joint work of the SERAC sector and the NUSAF unit of the JRC.</p>
         </div>
       </article>
 
@@ -267,12 +258,12 @@
         <div>
           <h3>Detection of nuclear material with software agents</h3>
           <p class="case-meta">2004–2006 · NUSAF, European Commission, Joint Research Centre</p>
-          <p>A tool for nuclear inspectors to detect predefined events in a nuclear plant,
-            a huge and cluttered place where platforms and cranes keep moving, so the scene
-            cannot be treated as static. An event is the presence of an object in a given
-            position.</p>
-          <p>The solution is an adaptive community of agents placed on the acquired image,
-            written in C++. An embedded Python engine lets users change the behaviour of
+          <p>A tool for nuclear inspectors to detect predefined events, such as the presence
+            of an object in a given position, in a nuclear plant: a huge and cluttered place
+            where platforms and cranes keep moving, so the scene cannot be treated as
+            static.</p>
+          <p>I developed it in C++ as an adaptive community of agents placed on the acquired
+            image, with an embedded Python engine that lets users change the behaviour of
             the agents with scripts while the system is running.</p>
         </div>
       </article>
@@ -282,11 +273,13 @@
         <div>
           <h3>ALIS integration and Event Viewer</h3>
           <p class="case-meta">2004–2006 · NUSAF, European Commission, Joint Research Centre</p>
-          <p>ALIS (All-In-One Surveillance) is an autonomous system that acquires images
-            at a set pace and stores them on its on-board PC card. A specific data
-            acquisition module integrated it with RADAR, a multi-sensor remote monitoring
-            system developed under the supervision of DG TREN, and an application called
-            Event Viewer was developed to review the stored images.</p>
+          <p>ALIS (All-In-One Surveillance) is an autonomous system that acquires images at a
+            set pace and stores them on its on-board PC card. A specific data acquisition
+            module integrated it with RADAR, a multi-sensor remote monitoring system
+            developed under the supervision of DG TREN.</p>
+          <p>I was part of the development of Event Viewer, an application that helps
+            nuclear inspectors review the information recorded by the system, using computer vision techniques for
+            detection and recognition.</p>
         </div>
       </article>
 
@@ -298,10 +291,11 @@
         <div>
           <h3>acdLib: a collision detection library</h3>
           <p class="case-meta">2003</p>
-          <p>A library based on a modification of the GJK algorithm that models objects
-            with spherical volumes: sphere, bi-sphere, tri-sphere and tetra-sphere. It
-            returns whether two objects collide and the distance between them, and it was
-            integrated into Virtual Robot Simulator (VRS).</p>
+          <p>A collision detection library that models objects with spherical volumes:
+            sphere, bi-sphere, tri-sphere and tetra-sphere. It returns whether two objects
+            collide and the distance between them.</p>
+          <p>I developed it on a modification of GJK that uses Minkowski space, and integrated it into
+            Virtual Robot Simulator (VRS).</p>
         </div>
       </article>
 
@@ -313,10 +307,15 @@
         <div>
           <h3>Hybrid control architecture for a differential robot</h3>
           <p class="case-meta">2003</p>
-          <p>A robot that follows a leader using four distance sensors and an
-            omnidirectional camera. Collision avoidance runs as a high-priority reactive
-            behaviour, while a scheduler manages exploring, locating the leader and
-            locating obstacles. Written in C/C++ and tested in Virtual Robot Simulator.</p>
+          <p>A mobile robot that follows a leader using four distance sensors and an
+            omnidirectional camera.</p>
+          <p>I designed and implemented its hybrid control architecture in C/C++: collision
+            avoidance runs as a high-priority reactive behaviour, while a scheduler manages
+            exploring, locating the leader and locating obstacles. It was tested in Virtual
+            Robot Simulator.</p>
+          <p>I also designed and built a prototype of its infrared sensor system: four Sharp
+            distance sensors read by a PIC16F877 microcontroller
+            and connected to the computer over RS-232.</p>
         </div>
       </article>
 
@@ -325,8 +324,8 @@
         <div>
           <h3>Robotic cell for Trencadís mosaics</h3>
           <p class="case-meta">2002–2004 · DISA, Universitat Politècnica de València and Trencadís Innovación</p>
-          <p>A production cell with a robot arm, a camera on the arm, two conveyor belts
-            and a computer. The vision system locates the tiles arriving on one belt and
+          <p>A production cell with a robot arm, a camera on the arm, two conveyor belts and
+            a computer. The vision system locates the tiles arriving on one belt and
             recognises their shape once the robot has picked them up; the robot then places
             them on the other belt.</p>
           <p>I worked on the vision algorithms, the interaction with the robot and the
@@ -341,11 +340,11 @@
         <div>
           <h3>Cardboard cutter with visual feedback</h3>
           <p class="case-meta">2002–2003 · DISA, Universitat Politècnica de València and Smurfit</p>
-          <p>A control system for the cutting stage of a machine that makes cardboard
-            boxes. A 2D vision system measures the displacement of a reference point in the
-            image and feeds it back to correct the cutter.</p>
-          <p>I worked on the vision algorithms and developed the application that
-            interacted with the cutting machine to correct the position of the cardboard.</p>
+          <p>A control system for the cutting stage of a machine that makes cardboard boxes.
+            A 2D vision system measures the displacement of a reference point in the image
+            and feeds it back to correct the cutter.</p>
+          <p>I worked on the vision algorithms and developed the application that interacted
+            with the cutting machine to correct the position of the cardboard.</p>
         </div>
       </article>
 
@@ -359,8 +358,9 @@
           <p class="case-meta">2002 · Universitat Politècnica de València</p>
           <p>A vision system split with CORBA into acquisition, processing, classification
             and visualisation, each able to run on a different PC. It locates an object by
-            category and returns its Cartesian position, using Tsai camera calibration and
-            kNN classification. Written in Visual C++ with the Matrox MIL library.</p>
+            category and returns its Cartesian position.</p>
+          <p>I designed and built it as my MEng project, in Visual C++ with the Matrox MIL
+            library, using Tsai camera calibration and kNN classification.</p>
           <p class="case-links"><a href="https://www.researchgate.net/publication/258175171_A_distributed_3D_vision_system">Article at World Automation Congress (2004)</a></p>
         </div>
       </article>
