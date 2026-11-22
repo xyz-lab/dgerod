@@ -26,6 +26,8 @@
 
 ### What needs Jekyll
 
+**Every page needs Jekyll**: to see the site on your computer, always run it with Jekyll (see [Previewing locally](#previewing-locally)). Opening the HTML files directly in the browser does not work.
+
 | Part | Needs Jekyll? |
 |---|---|
 | `index.html`, `projects/index.html`, `about-me.html` | Yes: they are HTML, but Jekyll fills in the version of the style sheet (and, in `index.html`, the latest notes). Opened directly, the styles do not load |
@@ -70,24 +72,26 @@ Drafts go in `blog/_drafts/` without a date in the file name. To preview them lo
 
 ## Previewing locally
 
-GitHub Pages builds Jekyll automatically; locally you have to install it.
+GitHub Pages builds the site with Jekyll automatically when you push. On your computer you always have to run Jekyll to see it: opening the HTML files directly in the browser shows the pages without styles, without the latest notes and without the portfolio cards.
 
 First time only (Ubuntu):
 
 ```bash
 sudo apt install ruby-full build-essential zlib1g-dev
-cd website
+cd website-dgerod
 bundle config set --local path vendor/bundle
 bundle install
 ```
 
-Every time you want to preview the site:
+Every time you want to preview the site, from the `website-dgerod` folder:
 
 ```bash
 bundle exec jekyll serve
 ```
 
-and open http://localhost:4000. The site rebuilds when a file changes; just reload the browser.
+and open http://localhost:4000. The site rebuilds when a file changes; just reload the browser. To stop it, press `Ctrl+C` in the terminal.
+
+To include the drafts of `blog/_drafts/`, add `--drafts`. If port 4000 is busy, use another one with `--port 4001`.
 
 > The `Gemfile` includes `csv`, `base64`, `bigdecimal` and `logger` because Ruby 3.4+ no longer ships them by default and Jekyll 3 (the version GitHub Pages uses) needs them.
 
