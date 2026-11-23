@@ -173,6 +173,8 @@ h2 {
 .posts li { padding: 10px 0; border-bottom: 1px solid var(--border); }
 .posts li:last-child, .posts li.last-visible { border-bottom: 0; }
 .posts time { display: block; font-size: 13px; color: var(--muted); }
+.post-intro { margin: 4px 0 0; font-size: 14px; color: var(--muted); line-height: 1.5; }
+.post-intro .read-more { white-space: nowrap; }
 .post-tags { margin-top: 4px; }
 .post-tags .tag { margin: 2px 4px 2px 0; }
 .tag-filter { margin: 16px 0 0; padding: 8px 12px; background: var(--bg); border-radius: 4px; font-size: 14px; }

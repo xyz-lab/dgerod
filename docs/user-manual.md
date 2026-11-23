@@ -67,6 +67,7 @@ Menu: Home · Projects · Scratchpad · GitHub · X / Twitter · LinkedIn · Abo
    ```
 
 3. It is published at `/blog/YYYY/MM/DD/short-title.html` and shows up in `/blog/` and in the RSS feed.
+4. In `/blog/` (Scratchpad) each post shows its first paragraph (cut at 35 words) as an intro, so start the post with a plain text paragraph. To write a different intro, add `summary: "..."` to the front matter.
 
 Drafts go in `blog/_drafts/` without a date in the file name. To preview them locally: `bundle exec jekyll serve --drafts`.
 

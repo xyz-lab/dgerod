@@ -24,6 +24,9 @@ redirect_from:
       <li data-tags="{{ post_tags | strip }}">
         <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
         <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%-d %b %Y" }}</time>
+        {%- if post.summary %}{% assign intro = post.summary %}{% else %}
+        {%- assign intro = post.content | split: '</p>' | first | split: '<p>' | last | strip_html | strip_newlines %}{% endif %}
+        <p class="post-intro">{{ intro | truncatewords: 35, "…" }} <a href="{{ post.url | relative_url }}" class="read-more">Read more</a></p>
         <div class="post-tags">
           {%- for tag in post.tags %}{% if tag != 'other' %}
           <a class="tag" href="#tag-{{ tag | slugify }}" data-tag="tag-{{ tag | slugify }}">{{ tag }}</a>
