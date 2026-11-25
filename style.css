@@ -229,7 +229,6 @@ footer {
 .pubs-toc { font-size: 14px; margin: -4px 0 8px; }
 .pubs-heading { margin: 28px 0 8px; font-size: 20px; font-weight: 600; }
 .pubs-group { margin: 18px 0 4px; font-size: 16px; font-weight: 600; }
-.pubs-group a { font-weight: 400; font-size: 14px; }
 .pubs { margin: 0; padding-left: 24px; }
 .pubs li { padding: 6px 0; line-height: 1.5; }
 .pubs .pub-note { display: block; font-size: 14px; color: var(--muted); }
