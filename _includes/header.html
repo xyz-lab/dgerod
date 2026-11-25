@@ -1,0 +1,22 @@
+{%- comment -%}
+  Site header: logo and menu, shared by every page.
+  Internal entries are marked as the current page when page.url matches;
+  the Scratchpad is also marked while reading a post.
+{%- endcomment -%}
+{%- assign is_blog = false -%}
+{%- if page.url == '/blog/' or page.layout == 'post' -%}{%- assign is_blog = true -%}{%- endif -%}
+  <header class="site-header">
+    <div class="inner">
+      <a class="logo" href="{{ '/' | relative_url }}"><span class="logo-name">Diego Escudero</span><span class="logo-role">Roboticist</span></a>
+      <ul class="nav">
+        <li><a {% if page.url == '/' %}class="active" aria-current="page" {% endif %}href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a {% if page.url == '/projects/' %}class="active" aria-current="page" {% endif %}href="{{ '/projects/' | relative_url }}">Projects</a></li>
+        <li><a {% if page.url == '/publications/' %}class="active" aria-current="page" {% endif %}href="{{ '/publications/' | relative_url }}">Publications</a></li>
+        <li><a {% if is_blog %}class="active" aria-current="page" {% endif %}href="{{ '/blog/' | relative_url }}">Scratchpad</a></li>
+        <li><a href="https://github.com/dgerod">GitHub</a></li>
+        <li><a href="https://x.com/dgerod">X / Twitter</a></li>
+        <li><a href="https://www.linkedin.com/in/dgerod">LinkedIn</a></li>
+        <li><a {% if page.url == '/about-me.html' %}class="active" aria-current="page" {% endif %}href="{{ '/about-me.html' | relative_url }}">About me</a></li>
+      </ul>
+    </div>
+  </header>

@@ -1,32 +1,19 @@
 ---
 # Front matter so Jekyll processes this page and can list the latest posts.
+description: "Diego Escudero, computer engineer specialized in robotics."
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Diego Escudero - Home</title>
-  <meta name="description" content="Diego Escudero, computer engineer specialized in robotics.">
+  {%- seo %}
   <link rel="alternate" type="application/atom+xml" title="Diego Escudero" href="feed.xml">
+  {% include favicon.html %}
   <link rel="stylesheet" href="style.css?v={{ site.time | date: '%s' }}">
 </head>
 <body>
-  <header class="site-header">
-    <div class="inner">
-      <a class="logo" href="index.html"><span class="logo-name">Diego Escudero</span><span class="logo-role">Roboticist</span></a>
-      <ul class="nav">
-        <li><a class="active" aria-current="page" href="index.html">Home</a></li>
-        <li><a href="projects/">Projects</a></li>
-        <li><a href="publications/">Publications</a></li>
-        <li><a href="blog/">Scratchpad</a></li>
-        <li><a href="https://github.com/dgerod">GitHub</a></li>
-        <li><a href="https://x.com/dgerod">X / Twitter</a></li>
-        <li><a href="https://www.linkedin.com/in/dgerod">LinkedIn</a></li>
-        <li><a href="about-me.html">About me</a></li>
-      </ul>
-    </div>
-  </header>
+  {% include header.html %}
 
   <main>
     <p class="tagline">« I am interested in <a href="https://en.wikipedia.org/wiki/Robotics">#Robotics</a> but I am able to speak about other things... sometimes. »</p>

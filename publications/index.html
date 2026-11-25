@@ -1,32 +1,20 @@
 ---
 # Front matter so Jekyll adds the version to the style sheet link.
+title: Publications
+description: "Journal articles, conference papers, PhD thesis, patents and talks by Diego Escudero."
 ---
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Diego Escudero - Publications</title>
-  <meta name="description" content="Journal articles, conference papers, PhD thesis, patents and talks by Diego Escudero.">
+  {%- seo %}
   <link rel="alternate" type="application/atom+xml" title="Diego Escudero" href="../feed.xml">
+{% include favicon.html %}
   <link rel="stylesheet" href="../style.css?v={{ site.time | date: '%s' }}">
 </head>
 <body>
-  <header class="site-header">
-    <div class="inner">
-      <a class="logo" href="../index.html"><span class="logo-name">Diego Escudero</span><span class="logo-role">Roboticist</span></a>
-      <ul class="nav">
-        <li><a href="../index.html">Home</a></li>
-        <li><a href="../projects/">Projects</a></li>
-        <li><a class="active" aria-current="page" href="./">Publications</a></li>
-        <li><a href="../blog/">Scratchpad</a></li>
-        <li><a href="https://github.com/dgerod">GitHub</a></li>
-        <li><a href="https://x.com/dgerod">X / Twitter</a></li>
-        <li><a href="https://www.linkedin.com/in/dgerod">LinkedIn</a></li>
-        <li><a href="../about-me.html">About me</a></li>
-      </ul>
-    </div>
-  </header>
+{% include header.html %}
 
   <main>
     <section class="box">

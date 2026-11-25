@@ -9,6 +9,7 @@
 ├── publications/         Publications: index.html (articles, conference papers, PhD thesis, patents, talks)
 ├── about-me.html         About me
 ├── style.css             Styles for the whole site
+├── favicon.svg           Favicon ("DE");
 ├── images/
 ├── portfolio/            Portfolio slideshow images + captions.md (captions and links)
 ├── blog/
@@ -17,6 +18,9 @@
 │   ├── images/           Images used by the posts
 │   ├── files/            Other files used by the posts (e.g. talk slides, PDF)
 │   └── _drafts/          Drafts (not published)
+├── _includes/
+│   ├── header.html       Header (logo and menu) shared by every page
+│   └── favicon.html      Links to the favicon, shared by every page
 ├── _layouts/
 │   ├── default.html      Header, menu and footer for the blog and posts
 │   └── post.html         Template for each post
@@ -101,8 +105,9 @@ To include the drafts of `blog/_drafts/`, add `--drafts`. If port 4000 is busy, 
 
 ## Maintenance
 
+- **Title, description and link previews:** every page has `{% seo %}` (plugin `jekyll-seo-tag`) in its `<head>`, which writes the `<title>`, the description and the Open Graph / Twitter tags used by LinkedIn, WhatsApp, X, etc. to show a preview card. Each page sets them in its front matter (`title:` and `description:`); the home page uses `title` and `tagline` from `_config.yml`. The card image is `images/about.jpeg` for every page (set in `defaults` in `_config.yml`); a page or post can use another one with `image:` in its front matter.
 - **Style sheet version:** every page links `style.css?v=…`, where the number is the time the site was built. Each publication changes it, so browsers download the new `style.css` instead of using a cached copy (GitHub Pages lets them keep it for 10 minutes).
-- **Menu:** it lives in five places: `index.html`, `projects/index.html`, `publications/index.html`, `about-me.html` and `_layouts/default.html`. If you change it, change all five.
+- **Menu:** the header (logo and menu) lives in one place, `_includes/header.html`, included by every page. The current page is marked when its URL matches `page.url`; the Scratchpad is also marked while reading a post. To add a page to the menu, add an entry there with its URL.
 - **Portfolio images:** they are in `portfolio/`, named `NN.ext` or `NN-M.ext` (`NN` = group, `M` = photo in the group); the slideshow shows them ordered by file name. Their captions and links are in the table of `portfolio/captions.md`. To add a photo, copy it into `portfolio/` and add a row to the table. The page reads the table when it loads, so to preview it locally you need a web server (`bundle exec jekyll serve` or `python3 -m http.server`), not the file opened directly.
 - **Portfolio projects:** the cards under the slideshow come from two places, both marked with `portfolio`: the projects of `projects/index.html` and the GitHub repositories. See [Choosing the portfolio projects](#choosing-the-portfolio-projects).
 - **Latest notes:** the five newest posts, listed by Jekyll when the site is built. Nothing to maintain: publishing a post updates them.

@@ -1,12 +1,14 @@
 title: "Diego Escudero"
 author: "dgerod"
-description: "Diego Escudero, computer engineer specialized in Robotics. Except where otherwise noted, content is licensed under CC BY 3.0."
+tagline: "Roboticist"
+description: "Diego Escudero, computer engineer specialized in robotics."
 url: "https://dgerod.xyz-lab.org.es"
 baseurl: ""
 lang: en
 
 twitter:
   username: dgerod
+  card: summary
 
 permalink: /blog/:year/:month/:day/:title:output_ext
 
@@ -28,6 +30,10 @@ feed:
   posts_limit: 20
 
 defaults:
+  - scope:
+      path: ""
+    values:
+      image: /images/about.jpeg
   - scope:
       path: ""
       type: posts
