@@ -12,14 +12,14 @@
     <div class="inner">
       <a class="logo" href="{{ '/' | relative_url }}"><span class="logo-name">Diego Escudero</span><span class="logo-role">Roboticist</span></a>
       <ul class="nav">
-        <li><a {% if page.url == '/' %}class="active" {% endif %}href="{{ '/' | relative_url }}">Home</a></li>
+        <li><a {% if page.url == '/' %}class="active" aria-current="page" {% endif %}href="{{ '/' | relative_url }}">Home</a></li>
         <li><a href="{{ '/projects/' | relative_url }}">Projects</a></li>
         <li><a href="{{ '/publications/' | relative_url }}">Publications</a></li>
-        <li><a {% if page.url == '/blog/' or page.layout == 'post' %}class="active" {% endif %}href="{{ '/blog/' | relative_url }}">Scratchpad</a></li>
+        <li><a {% if page.url == '/blog/' or page.layout == 'post' %}class="active" aria-current="page" {% endif %}href="{{ '/blog/' | relative_url }}">Scratchpad</a></li>
         <li><a href="https://github.com/dgerod">GitHub</a></li>
         <li><a href="https://x.com/dgerod">X / Twitter</a></li>
         <li><a href="https://www.linkedin.com/in/dgerod">LinkedIn</a></li>
-        <li><a {% if page.url == '/about-me.html' %}class="active" {% endif %}href="{{ '/about-me.html' | relative_url }}">About me</a></li>
+        <li><a {% if page.url == '/about-me.html' %}class="active" aria-current="page" {% endif %}href="{{ '/about-me.html' | relative_url }}">About me</a></li>
       </ul>
     </div>
   </header>

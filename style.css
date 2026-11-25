@@ -46,7 +46,8 @@ a:hover { text-decoration: underline; }
   letter-spacing: .05em;
   border-radius: 3px;
 }
-.nav a:hover, .nav a.active { background: rgba(255,255,255,.12); text-decoration: none; color: #fff; }
+.nav a:hover { background: rgba(255,255,255,.12); text-decoration: none; color: #fff; }
+.nav a.active, .nav a.active:hover { background: var(--accent); color: #fff; }
 
 /* Main */
 main { max-width: 1200px; margin: 0 auto; padding: 32px 16px 48px; }
