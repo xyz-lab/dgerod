@@ -6,6 +6,7 @@
 .
 ├── index.html            Home: Portfolio slideshow + project cards (left), latest notes (right)
 ├── projects/             Projects: index.html (one section per project) and its images
+├── publications/         Publications: index.html (articles, conference papers, PhD thesis, patents)
 ├── about-me.html         About me
 ├── style.css             Styles for the whole site
 ├── images/               Logo and About me photo
@@ -30,7 +31,7 @@
 
 | Part | Needs Jekyll? |
 |---|---|
-| `index.html`, `projects/index.html`, `about-me.html` | Yes: they are HTML, but Jekyll fills in the version of the style sheet (and, in `index.html`, the latest notes). Opened directly, the styles do not load |
+| `index.html`, `projects/index.html`, `publications/index.html`, `about-me.html` | Yes: they are HTML, but Jekyll fills in the version of the style sheet (and, in `index.html`, the latest notes). Opened directly, the styles do not load |
 | `blog/`, the posts and the RSS feed (`feed.xml`) | Yes: opened directly they look broken (you see `{% ... %}` code) |
 
 ### Folders starting with `_`
@@ -47,9 +48,10 @@ The names are fixed: if you rename them, Jekyll stops recognising them.
 - **Home** (`index.html`): tagline, the Portfolio (image slideshow and project cards), and the latest notes on the right. On screens narrower than 860 px the latest notes move below the Portfolio.
 - **Blog** (`blog/index.html`): all posts grouped by year, and a list by tag.
 - **Projects** (`projects/index.html`): one section per project, newest first, with its images in the same folder (separate from the slideshow images in `portfolio/`). Each section has an `id` that the slideshow and the project cards of the home page link to.
+- **Publications** (`publications/index.html`): journal articles, conference papers, the PhD thesis and the patents, written by hand. The full record, with citations and legal status, is in `perfil-base` (`publications.md` and `patents.md`); the page only shows what is worth publishing. Patents are grouped by line of work and link to Google Patents; applications that were refused or withdrawn are shown only as their WO/EP number.
 - **About me** (`about-me.html`): bio, photo and links to other profiles.
 
-Menu: Home · Projects · Scratchpad · GitHub · X / Twitter · LinkedIn · About me.
+Menu: Home · Projects · Publications · Scratchpad · GitHub · X / Twitter · LinkedIn · About me.
 
 ## Writing a post
 
@@ -99,7 +101,7 @@ To include the drafts of `blog/_drafts/`, add `--drafts`. If port 4000 is busy, 
 ## Maintenance
 
 - **Style sheet version:** every page links `style.css?v=…`, where the number is the time the site was built. Each publication changes it, so browsers download the new `style.css` instead of using a cached copy (GitHub Pages lets them keep it for 10 minutes).
-- **Menu:** it lives in four places: `index.html`, `projects/index.html`, `about-me.html` and `_layouts/default.html`. If you change it, change all four.
+- **Menu:** it lives in five places: `index.html`, `projects/index.html`, `publications/index.html`, `about-me.html` and `_layouts/default.html`. If you change it, change all five.
 - **Portfolio images:** they are in `portfolio/`, named `NN.ext` or `NN-M.ext` (`NN` = group, `M` = photo in the group); the slideshow shows them ordered by file name. Their captions and links are in the table of `portfolio/captions.md`. To add a photo, copy it into `portfolio/` and add a row to the table. The page reads the table when it loads, so to preview it locally you need a web server (`bundle exec jekyll serve` or `python3 -m http.server`), not the file opened directly.
 - **Portfolio projects:** the cards under the slideshow come from two places, both marked with `portfolio`: the projects of `projects/index.html` and the GitHub repositories. See [Choosing the portfolio projects](#choosing-the-portfolio-projects).
 - **Latest notes:** the five newest posts, listed by Jekyll when the site is built. Nothing to maintain: publishing a post updates them.
