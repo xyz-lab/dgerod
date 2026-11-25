@@ -6,7 +6,7 @@
 .
 ├── index.html            Home: Portfolio slideshow + project cards (left), latest notes (right)
 ├── projects/             Projects: index.html (one section per project) and its images
-├── publications/         Publications: index.html (articles, conference papers, PhD thesis, patents)
+├── publications/         Publications: index.html (articles, conference papers, PhD thesis, patents, talks)
 ├── about-me.html         About me
 ├── style.css             Styles for the whole site
 ├── images/               Logo and About me photo
@@ -48,7 +48,7 @@ The names are fixed: if you rename them, Jekyll stops recognising them.
 - **Home** (`index.html`): tagline, the Portfolio (image slideshow and project cards), and the latest notes on the right. On screens narrower than 860 px the latest notes move below the Portfolio.
 - **Blog** (`blog/index.html`): all posts grouped by year, and a list by tag.
 - **Projects** (`projects/index.html`): one section per project, newest first, with its images in the same folder (separate from the slideshow images in `portfolio/`). Each section has an `id` that the slideshow and the project cards of the home page link to.
-- **Publications** (`publications/index.html`): journal articles, conference papers, the PhD thesis and the patents, written by hand. The full record, with citations and legal status, is in `perfil-base` (`publications.md` and `patents.md`); the page only shows what is worth publishing. Patents are grouped by line of work and link to Google Patents; applications that were refused or withdrawn are shown only as their WO/EP number.
+- **Publications** (`publications/index.html`): journal articles, conference papers, the PhD thesis, the patents and the public talks, written by hand. The full record, with citations and legal status, is in `perfil-base` (`publications.md`, `patents.md` and `talks.md`); the page only shows what is worth publishing. Patents are grouped by line of work and link to Google Patents; applications that were refused or withdrawn are shown only as their WO/EP number.
 - **About me** (`about-me.html`): bio, photo and links to other profiles.
 
 Menu: Home · Projects · Publications · Scratchpad · GitHub · X / Twitter · LinkedIn · About me.
