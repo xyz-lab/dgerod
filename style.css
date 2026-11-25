@@ -32,7 +32,10 @@ a:hover { text-decoration: underline; }
   justify-content: space-between;
   gap: 12px;
 }
-.logo img { display: block; height: 55px; width: auto; }
+.logo { display: block; color: #fff; line-height: 1.1; }
+.logo:hover { text-decoration: none; color: #fff; }
+.logo-name { display: block; font-size: 30px; }
+.logo-role { display: block; margin-top: 6px; font-size: 20px; font-style: italic; color: #e8e8e8; }
 .nav { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 4px; }
 .nav a {
   display: block;

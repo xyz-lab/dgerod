@@ -9,7 +9,7 @@
 ├── publications/         Publications: index.html (articles, conference papers, PhD thesis, patents, talks)
 ├── about-me.html         About me
 ├── style.css             Styles for the whole site
-├── images/               Logo and About me photo
+├── images/
 ├── portfolio/            Portfolio slideshow images + captions.md (captions and links)
 ├── blog/
 │   ├── index.html        Blog page (/blog/): posts by year and by tag
