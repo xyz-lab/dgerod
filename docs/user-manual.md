@@ -15,6 +15,7 @@
 │   ├── index.html        Blog page (/blog/): posts by year and by tag
 │   ├── _posts/           Blog posts, in Markdown
 │   ├── images/           Images used by the posts
+│   ├── files/            Other files used by the posts (e.g. talk slides, PDF)
 │   └── _drafts/          Drafts (not published)
 ├── _layouts/
 │   ├── default.html      Header, menu and footer for the blog and posts
@@ -106,6 +107,7 @@ To include the drafts of `blog/_drafts/`, add `--drafts`. If port 4000 is busy, 
 - **Portfolio projects:** the cards under the slideshow come from two places, both marked with `portfolio`: the projects of `projects/index.html` and the GitHub repositories. See [Choosing the portfolio projects](#choosing-the-portfolio-projects).
 - **Latest notes:** the five newest posts, listed by Jekyll when the site is built. Nothing to maintain: publishing a post updates them.
 - **Post images:** they go in `blog/images/`, not in `blog/_posts/`: Jekyll 3 (the version GitHub Pages uses) does not publish files from `_posts/` that are not posts. Reference them with an absolute path, e.g. `![Diagram](/blog/images/name.png)`.
+- **Post files:** other files that belong to a post (talk slides, PDFs) go in `blog/files/`, named in lower case without accents (e.g. `tdd-iri-2014.pdf`). Files live next to the content that explains them; the Publications page only links to them.
 
 ## Choosing the portfolio projects
 

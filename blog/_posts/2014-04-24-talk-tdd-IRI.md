@@ -9,4 +9,4 @@ Yesterday I talked about [Test-Driven Development](http://en.wikipedia.org/wiki/
 
 ![image](https://user-images.githubusercontent.com/1392333/153741742-8624a5a5-a5a4-4c64-a760-1d19d3d45af5.png)
 
-In this talk I focused on my experience with this technique, and how/when we are applying it in the company I work. You could find the slides I used [here](https://drive.google.com/file/d/0ByovaZlEMcTJS1M1WjRkQm5zcXc/view?usp=sharing&resourcekey=0-FEo5F7Uh4jOxy25RownYZQ). 
+In this talk I focused on my experience with this technique, and how/when we are applying it in the company I work. You could find the slides I used [here](/blog/files/tdd-iri-2014.pdf). 
