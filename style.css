@@ -294,6 +294,8 @@ a.tag.active:hover { background: #9e2f23; border-color: #9e2f23; color: #fff; }
 .post-content table { border-collapse: collapse; }
 .post-content th, .post-content td { border: 1px solid var(--border); padding: 4px 8px; }
 
+.post-contact { color: var(--muted); font-size: 14px; margin: 32px 0 0; }
+
 .post-nav {
   display: flex;
   justify-content: space-between;
