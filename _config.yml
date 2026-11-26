@@ -33,7 +33,7 @@ defaults:
   - scope:
       path: ""
     values:
-      image: /images/about.jpeg
+      image: /apple-touch-icon.png
   - scope:
       path: ""
       type: posts
