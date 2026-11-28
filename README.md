@@ -9,7 +9,8 @@ and run, from `main`:
 
 ```bash
 tools/publish.sh <branch>              # Claude proposes the commit message
-tools/publish.sh <branch> "<message>"  # Use this message
+tools/publish.sh <branch> -c "<why>"   # ... using this context too
+tools/publish.sh <branch> "<message>"  # Use only this message
 ```
 
 The script commits what is staged on a new branch, pushes it, fast-forwards

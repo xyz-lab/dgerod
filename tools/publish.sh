@@ -3,18 +3,30 @@
 # fast-forward main to it, push main and wait for GitHub Pages to build.
 #
 # Usage: tools/publish.sh <branch> ["<commit message>"]
+#        tools/publish.sh <branch> -c "<context for Claude>"
 #
-# Without a message, Claude Code (claude -p) proposes one from the staged diff
+# Without a message, Claude Code (claude -p) proposes one from the staged diff,
+# plus the context given with -c (why the change was made, what it groups),
 # and asks before using it. Unstaged changes are left untouched.
 
 set -euo pipefail
 
-if [ $# -lt 1 ] || [ $# -gt 2 ]; then
+usage() {
   echo "Usage: $0 <branch> [\"<commit message>\"]" >&2
+  echo "       $0 <branch> -c \"<context for Claude>\"" >&2
   exit 1
-fi
-branch=$1
-message=${2:-}
+}
+
+[ $# -ge 1 ] || usage
+branch=$1; shift
+message=""
+hint=""
+case $# in
+  0) ;;
+  1) [ "$1" != -c ] || usage; message=$1 ;;
+  2) [ "$1" = -c ] && [ -n "$2" ] || usage; hint=$2 ;;
+  *) usage ;;
+esac
 
 cd "$(git rev-parse --show-toplevel)"
 
@@ -68,6 +80,13 @@ $(git log -15 --format='- %s' main)
 Rules: one subject line in English, at most 72 characters, no trailing period,
 'Page: what changed' when it touches one page. Add a short body only if the
 subject cannot say it all. Reply with the message only: no quotes, no code fences."
+  if [ -n "$hint" ]; then
+    prompt+="
+
+The author describes the change like this (it may be in Spanish; write the
+message in English, and use it to say what the diff alone does not show):
+$hint"
+  fi
   message=$(git diff --cached | claude -p "$prompt" --model haiku --tools "" --no-session-persistence) \
     || fail "claude did not return a message."
   [ -n "$message" ] || fail "claude returned an empty message."
