@@ -43,6 +43,7 @@ defaults:
 
 exclude:
   - docs
+  - tools
   - vendor
   - .bundle
   - README.md
