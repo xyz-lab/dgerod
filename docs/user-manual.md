@@ -28,6 +28,9 @@
 ├── _config.yml           Jekyll configuration
 ├── Gemfile               Dependencies to preview the site locally
 ├── README.md             Short description of the repo
+├── tools/
+│   ├── serve.sh          Preview the site locally (not published on the site)
+│   └── publish.sh        Commit what is staged and publish it (not published on the site)
 └── docs/user-manual.md   This document (not published on the site)
 ```
 
@@ -77,7 +80,7 @@ Menu: Home · Projects · Publications · Scratchpad · GitHub · X / Twitter ·
 3. It is published at `/blog/YYYY/MM/DD/short-title.html` and shows up in `/blog/` and in the RSS feed.
 4. In `/blog/` (Scratchpad) each post shows its first paragraph (cut at 35 words) as an intro, so start the post with a plain text paragraph. To write a different intro, add `summary: "..."` to the front matter.
 
-Drafts go in `blog/_drafts/` without a date in the file name. To preview them locally: `bundle exec jekyll serve --drafts`.
+Drafts go in `blog/_drafts/` without a date in the file name. To preview them locally: `tools/serve.sh --drafts`.
 
 ## Previewing locally
 
@@ -95,10 +98,10 @@ bundle install
 Every time you want to preview the site, from the `website-dgerod` folder:
 
 ```bash
-bundle exec jekyll serve
+tools/serve.sh
 ```
 
-and open http://localhost:4000. The site rebuilds when a file changes; just reload the browser. To stop it, press `Ctrl+C` in the terminal.
+and open http://localhost:4000. The site rebuilds when a file changes; just reload the browser. To stop it, press `Ctrl+C` in the terminal. The script installs the gems if they are missing and runs `bundle exec jekyll serve`, passing on any option you give it.
 
 To include the drafts of `blog/_drafts/`, add `--drafts`. If port 4000 is busy, use another one with `--port 4001`.
 
@@ -111,7 +114,7 @@ To include the drafts of `blog/_drafts/`, add `--drafts`. If port 4000 is busy, 
 - **Email:** the contact address is `email:` in `_config.yml`. Pages show it with `{% include email.html %}` (or `{% include email.html text="Email" %}` for a fixed text). The include writes the `mailto:` link with JavaScript, so the full address is not in the HTML for simple spam bots; without JavaScript it shows `user [at] domain`. It is used in the About me page and in the contact line at the end of each post (`_layouts/post.html`).
 
 - **Menu:** the header (logo and menu) lives in one place, `_includes/header.html`, included by every page. The current page is marked when its URL matches `page.url`; the Scratchpad is also marked while reading a post. To add a page to the menu, add an entry there with its URL.
-- **Portfolio images:** they are in `portfolio/`, named `NN.ext` or `NN-M.ext` (`NN` = group, `M` = photo in the group); the slideshow shows them ordered by file name. Their captions and links are in the table of `portfolio/captions.md`. To add a photo, copy it into `portfolio/` and add a row to the table. The page reads the table when it loads, so to preview it locally you need a web server (`bundle exec jekyll serve` or `python3 -m http.server`), not the file opened directly.
+- **Portfolio images:** they are in `portfolio/`, named `NN.ext` or `NN-M.ext` (`NN` = group, `M` = photo in the group); the slideshow shows them ordered by file name. Their captions and links are in the table of `portfolio/captions.md`. To add a photo, copy it into `portfolio/` and add a row to the table. The page reads the table when it loads, so to preview it locally you need a web server (`tools/serve.sh` or `python3 -m http.server`), not the file opened directly.
 - **Portfolio projects:** the cards under the slideshow come from two places, both marked with `portfolio`: the projects of `projects/index.html` and the GitHub repositories. See [Choosing the portfolio projects](#choosing-the-portfolio-projects).
 - **Latest notes:** the five newest posts, listed by Jekyll when the site is built. Nothing to maintain: publishing a post updates them.
 - **Post images:** they go in `blog/images/`, not in `blog/_posts/`: Jekyll 3 (the version GitHub Pages uses) does not publish files from `_posts/` that are not posts. Reference them with an absolute path, e.g. `![Diagram](/blog/images/name.png)`.
@@ -151,7 +154,7 @@ Tips:
 - Write a short first sentence that says what the project is: it is the text of the card.
 - The cards are shown in two columns, so an even number of projects looks better.
 - The projects of the website are sorted alphabetically by title, not in the order of `projects/index.html`.
-- The page reads `projects/index.html` when it loads, so to preview the cards locally you need a web server (`bundle exec jekyll serve`), not the file opened directly.
+- The page reads `projects/index.html` when it loads, so to preview the cards locally you need a web server (`tools/serve.sh`), not the file opened directly.
 
 ### GitHub repositories
 
