@@ -1,0 +1,7 @@
+{%- comment -%}
+  Email link written by JavaScript so simple bots don't find the address in the HTML.
+  Without JavaScript it shows "user [at] domain". Usage: {% include email.html %}
+  or {% include email.html text="Email" %} to show a fixed text.
+{%- endcomment -%}
+{%- assign email_parts = site.email | split: "@" -%}
+<a class="email" href="#" data-u="{{ email_parts[0] }}" data-d="{{ email_parts[1] }}"{% if include.text %} data-t="{{ include.text }}"{% endif %}>{{ include.text | default: "" }}{% unless include.text %}{{ email_parts[0] }} [at] {{ email_parts[1] }}{% endunless %}</a><script>(function(a){var e=a.dataset.u+"@"+a.dataset.d;a.href="mailto:"+e;if(!a.dataset.t)a.textContent=e;})(document.currentScript.previousElementSibling);</script>

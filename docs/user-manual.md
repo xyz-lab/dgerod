@@ -20,7 +20,8 @@
 │   └── _drafts/          Drafts (not published)
 ├── _includes/
 │   ├── header.html       Header (logo and menu) shared by every page
-│   └── favicon.html      Links to the favicon, shared by every page
+│   ├── favicon.html      Links to the favicon, shared by every page
+│   └── email.html        Email link (address hidden from simple bots)
 ├── _layouts/
 │   ├── default.html      Header, menu and footer for the blog and posts
 │   └── post.html         Template for each post
@@ -107,6 +108,8 @@ To include the drafts of `blog/_drafts/`, add `--drafts`. If port 4000 is busy, 
 
 - **Title, description and link previews:** every page has `{% seo %}` (plugin `jekyll-seo-tag`) in its `<head>`, which writes the `<title>`, the description and the Open Graph / Twitter tags used by LinkedIn, WhatsApp, X, etc. to show a preview card. Each page sets them in its front matter (`title:` and `description:`); the home page uses `title` and `tagline` from `_config.yml`. The card image is the "DE" logo, `apple-touch-icon.png`, for every page (set in `defaults` in `_config.yml`); a page or post can use another one with `image:` in its front matter.
 - **Style sheet version:** every page links `style.css?v=…`, where the number is the time the site was built. Each publication changes it, so browsers download the new `style.css` instead of using a cached copy (GitHub Pages lets them keep it for 10 minutes).
+- **Email:** the contact address is `email:` in `_config.yml`. Pages show it with `{% include email.html %}` (or `{% include email.html text="Email" %}` for a fixed text). The include writes the `mailto:` link with JavaScript, so the full address is not in the HTML for simple spam bots; without JavaScript it shows `user [at] domain`. It is used in the About me page and in the contact line at the end of each post (`_layouts/post.html`).
+
 - **Menu:** the header (logo and menu) lives in one place, `_includes/header.html`, included by every page. The current page is marked when its URL matches `page.url`; the Scratchpad is also marked while reading a post. To add a page to the menu, add an entry there with its URL.
 - **Portfolio images:** they are in `portfolio/`, named `NN.ext` or `NN-M.ext` (`NN` = group, `M` = photo in the group); the slideshow shows them ordered by file name. Their captions and links are in the table of `portfolio/captions.md`. To add a photo, copy it into `portfolio/` and add a row to the table. The page reads the table when it loads, so to preview it locally you need a web server (`bundle exec jekyll serve` or `python3 -m http.server`), not the file opened directly.
 - **Portfolio projects:** the cards under the slideshow come from two places, both marked with `portfolio`: the projects of `projects/index.html` and the GitHub repositories. See [Choosing the portfolio projects](#choosing-the-portfolio-projects).
@@ -166,7 +169,23 @@ Write a description that says what the repository is: it is the text of the card
 
 The site lives in the `xyz-lab/dgerod` repo and is published with GitHub Pages at https://dgerod.xyz-lab.org.es/ (the `CNAME` file sets the custom domain; in IONOS, `dgerod.xyz-lab.org.es` is a CNAME to `xyz-lab.github.io`). After a push to the main branch, GitHub Pages builds and publishes the site within a few minutes.
 
-URLs:
+### How to publish
+
+Stage the changes and run, from `main`:
+
+```bash
+tools/publish.sh <branch>              # Claude proposes the commit message
+tools/publish.sh <branch> -c "<why>"   # ... using this context too
+tools/publish.sh <branch> "<message>"  # Use only this message
+```
+
+The script commits what is staged on a new branch, pushes it, fast-forwards `main`, pushes `main` and waits for the Pages build. Unstaged changes are left as they are. It stops before doing anything if `main` is not in sync with `origin/main`, or if a staged page uses an image (`src="..."`) that is not in the repository.
+
+Without a message it runs `claude -p` (Claude Code) on the staged diff, shows the proposed message and asks whether to use it, edit it or cancel.
+
+After publishing, CSS changes may take up to 10 minutes to show (Pages caches them); reload with Ctrl+Shift+R.
+
+### URLs
 
 - posts are at `/blog/YYYY/MM/DD/title.html` (set by `permalink` in `_config.yml`);
 - `/blog.html`, `/archive.html` and `/by_tags.html` redirect to `/blog/`;
