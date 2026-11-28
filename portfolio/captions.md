@@ -11,7 +11,7 @@ Captions and links of the photos in the home page slideshow.
 | Photo | Caption | Link |
 |---|---|---|
 | <img src="01-1.jpg" width="120"><br>`01-1.jpg` | ABB robot in the Robotics Lab. of the DISA/UPV (2000–2004) | https://www.upv.es/entidades/disa/ |
-| <img src="01-3.jpg" width="120"><br>`01-3.jpg` | Rhino XR-1 robot in the Robotics Lab. of the DISA/UPV (2000–2004) | |
+| <img src="01-3.jpg" width="120"><br>`01-3.jpg` | Rhino XR-1 robot used in the Robotics Lab. of the DISA/UPV (2000–2004) | |
 | <img src="02-1.jpg" width="120"><br>`02-1.jpg` | Container crane spreader (2001). Illustrative image: Joe.Sa1998, CC BY-SA 4.0 | projects/#container-help |
 | <img src="03-1.jpg" width="120"><br>`03-1.jpg` | Cardboard aligner with visual feedback for Smurfit (2001) | projects/#cardboard |
 | <img src="04-1.jpg" width="120"><br>`04-1.jpg` | CRS robot used in my MEng project, a distributed 3D vision system (2002) | projects/#distributed-vision |
@@ -27,10 +27,9 @@ Captions and links of the photos in the home page slideshow.
 | <img src="12-1.jpg" width="120"><br>`12-1.jpg` | Security mobile robot developed for MoviRobotics (2008) | projects/#movirobotics |
 | <img src="13-1.jpg" width="120"><br>`13-1.jpg` | Motion Control Engine of NJ (2009) | projects/#mce |
 | <img src="14-1.jpg" width="120"><br>`14-1.jpg` | OMRON Trajexia motion controller (2010–2011) | projects/#trajexia |
-| <img src="15-1.png" width="120"><br>`15-1.png` | Kinematic diagram of a delta-3 robot (2011) | blog/2011/09/16/kinematics-delta-3-robot.html |
+| <img src="15-1.jpg" width="120"><br>`15-1.jpg` | Delta-3 robot (2011) | projects/#nj-robotics |
 | <img src="15-2.jpg" width="120"><br>`15-2.jpg` | Building a cardboard model of a delta-3 robot (2011) | blog/2010/09/25/studying-delta-3-robot.html |
 | <img src="15-4.png" width="120"><br>`15-4.png` | Workspace of a delta-3 robot computed in Scilab (2011) | |
-| <img src="16-1.jpg" width="120"><br>`16-1.jpg` | Delta-3 robot (2011) | projects/#nj-robotics |
 | <img src="17-1.png" width="120"><br>`17-1.png` | CAD model of a delta-2 robot (2012)| blog/2012/06/02/kinematics-delta-2-robot.html |
 | <img src="17-3.png" width="120"><br>`17-3.png` | Workspace of a delta-2 robot (2012) | |
 | <img src="18-1.jpg" width="120"><br>`18-1.jpg` | “Cat and mouse” game with ROS, MORSE and a CRAM plan (2013) | blog/2013/01/26/cat-and-mouse-in-ros-morse-and-cram.html |
